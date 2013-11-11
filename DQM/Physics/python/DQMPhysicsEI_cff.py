@@ -28,40 +28,24 @@ susyDQM_EI.electronCollection = cms.InputTag('pfIsolatedElectronsEI')
 susyDQM_EI.jetCollection = cms.InputTag('pfJetsEI')
 susyDQM_EI.metCollection = cms.InputTag('pfMetEI')
 
-topDiLeptonOfflineDQM_EI = cms.EDAnalyzer("TopDiLeptonOfflineDQM",
-  ## ------------------------------------------------------
-  ## SETUP
-  ##
-  ## configuration of the MonitoringEnsemble(s)
-  ## [mandatory] : optional PSets may be omitted
-  ##
-  setup = cms.PSet(
-    ## sub-directory to write the monitor histograms to
-    ## [mandatory] : should not be changed w/o explicit 
-    ## communication to TopCom!
-    directory = cms.string("Physics/TopEI/TopDiLeptonDQM/"),
 
-    ## [mandatory]
+topDiLeptonOfflineDQM_EI = cms.EDAnalyzer("TopDiLeptonOfflineDQM",
+  setup = cms.PSet(
+    directory = cms.string("Physics/TopEI/TopDiLeptonDQM/"),
     sources = cms.PSet(
       muons = cms.InputTag("pfIsolatedMuonsEI"),
       elecs = cms.InputTag("pfIsolatedElectronsEI"),
       jets  = cms.InputTag("pfJetsEI"),
       mets  = cms.VInputTag("met", "tcMet", "pfMetEI")
       ),
-    ## [optional] : when omitted the verbosity level is set to STANDARD
     monitoring = cms.PSet(
       verbosity = cms.string("DEBUG")
     ),
   ),
-  ## [mandatory] : but may be empty
-  ##
   preselection = cms.PSet(
   ),
   selection = cms.VPSet(
     cms.PSet(
-      ## [mandatory] : 'jets' defines the objects to
-      ## select on, 'step0' labels the histograms;
-      ## instead of 'step0' you can choose any label
       label  = cms.string("empty:step0")
     ),
   )
