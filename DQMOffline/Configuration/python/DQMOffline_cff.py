@@ -40,6 +40,7 @@ from DQMOffline.Trigger.DQMOffline_Trigger_cff import *
 from DQMOffline.RecoB.PrimaryVertexMonitor_cff import *
 from DQMOffline.RecoB.dqmAnalyzer_cff import *
 from DQM.Physics.DQMPhysics_cff import *
+from DQM.Physics.DQMPhysicsEI_cff import *
 from Validation.RecoTau.DQMSequences_cfi import *
 from DQM.TrackingMonitorSource.TrackingSourceConfig_Tier0_cff import *
 
@@ -54,6 +55,7 @@ DQMOfflinePrePOG = cms.Sequence( TrackingDQMSourceTier0 *
                                  bTagPlotsDATA *
                                  alcaBeamMonitor *
                                  dqmPhysics *
+                                 dqmPhysicsEI *
                                  produceDenoms *
                                  pfTauRunDQMValidation)
 
@@ -67,12 +69,13 @@ DQMOffline = cms.Sequence( DQMOfflinePreDPG *
 DQMOfflinePrePOGMC = cms.Sequence( pvMonitor *
                                    prebTagSequence *
                                    bTagPlotsDATA *
-                                   dqmPhysics )
+                                   dqmPhysics *
+                                   dqmPhysicsEI )
 
 DQMOfflinePOGMC = cms.Sequence( DQMOfflinePrePOGMC *
                                 DQMMessageLogger )
     
-DQMOfflinePhysics = cms.Sequence( dqmPhysics )
+DQMOfflinePhysics = cms.Sequence( dqmPhysics * dqmPhysicsEI )
 
 
 DQMOfflineCommon = cms.Sequence( dqmDcsInfo *
@@ -85,6 +88,7 @@ DQMOfflineCommon = cms.Sequence( dqmDcsInfo *
                                  alcaBeamMonitor *
                                  castorSources *
                                  dqmPhysics *
+                                 dqmPhysicsEI *
                                  pvMonitor *
                                  produceDenoms *
                                  pfTauRunDQMValidation 
@@ -99,6 +103,7 @@ DQMOfflineCommonSiStripZeroBias = cms.Sequence( dqmDcsInfo *
                                  alcaBeamMonitor *
                                  castorSources *
                                  dqmPhysics *
+                                 dqmPhysicsEI *
                                  pvMonitor *
                                  produceDenoms *
                                  pfTauRunDQMValidation 
