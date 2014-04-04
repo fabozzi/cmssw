@@ -325,15 +325,14 @@ steps['SingleMuPt10_ID']=identitySim(steps['SingleMuPt10'])
 steps['TTbar_ID']=identitySim(steps['TTbar'])
 
 baseDataSetRelease=[
-    'CMSSW_6_2_0_pre8-PRE_ST62_V8-v1',  # 8 TeV , keep old GEN-SIM
-    'CMSSW_7_1_0_pre1-STARTHI70_V5-v1', # Run1 HI GEN-SIM (only MB)
+    'CMSSW_7_1_0_pre5-START71_V1-v1',  # 8 TeV relval
+    'CMSSW_7_1_0_pre5-STARTHI71_V1-v1', # Run1 HI GEN-SIM (only MB = wf 140)
     'CMSSW_6_2_0_pre8-PRE_ST62_V8_FastSim-v1', # for fastsim id test
     'CMSSW_6_2_0_pre8-PRE_SH62_V15-v2', # Run1 HI GEN-SIM (only HydjetQ_B3_2760)
     'CMSSW_6_1_0_pre6-STARTHI61_V6-v1', # Run1 HI GEN-SIM (only HydjetQ_B0_2760)
     'CMSSW_6_2_0_pre8-PRE_ST62_V8-v3',  # pPb 
-    'CMSSW_7_1_0_pre1-POSTLS170_V1-v1', # 13 TeV samples with postLs1 geometry and updated mag field
-    'CMSSW_6_2_0_pre8-PRE_SH62_V15-v1', # Run1 HI GEN-SIM (only HydjetQ_B8_2760)
-    'CMSSW_7_1_0_pre1-POSTLS170_V1-v4'  # GEN-SIM for 13 TeV BuJPsiK sample
+    'CMSSW_7_1_0_pre5-POSTLS171_V1-v1', # 13 TeV samples with postLs1 geometry and updated mag field
+    'CMSSW_6_2_0_pre8-PRE_SH62_V15-v1'  # Run1 HI GEN-SIM (only HydjetQ_B8_2760)
     ]
 
 # note: INPUT commands to be added once GEN-SIM w/ 13TeV+PostLS1Geo will be available 
@@ -398,8 +397,8 @@ steps['PhotonJets_Pt_10_13INPUT']={'INPUT':InputInfo(dataSet='/RelValPhotonJets_
 steps['QQH1352T_Tauola_13INPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_Tauola_13/%s/GEN-SIM'%(baseDataSetRelease[6],),location='STD')}
 steps['ZmumuJets_Pt_20_300_13INPUT']={'INPUT':InputInfo(dataSet='/RelValZmumuJets_Pt_20_300_13/%s/GEN-SIM'%(baseDataSetRelease[6],),location='STD')}
 steps['ADDMonoJet_d3MD3_13INPUT']={'INPUT':InputInfo(dataSet='/RelValADDMonoJet_d3MD3_13/%s/GEN-SIM'%(baseDataSetRelease[6],),location='STD')}
-steps['RSKKGluon_m3000GeV_13INPUT']={'INPUT':InputInfo(dataSet='/RelValRSKKGluon_m3000GeV_13/%s/GEN-SIM'%(baseDataSetRelease[6],),location='STD')} # RelValRel to be removed at the next GEN-SIM recycle 
-steps['Pythia6_BuJpsiK_TuneZ2star_13INPUT']={'INPUT':InputInfo(dataSet='/RelValPythia6_BuJpsiK_TuneZ2star_13/%s/GEN-SIM'%(baseDataSetRelease[8],),location='STD')} # RelValRel to be removed at the next GEN-SIM recycle 
+steps['RSKKGluon_m3000GeV_13INPUT']={'INPUT':InputInfo(dataSet='/RelValRSKKGluon_m3000GeV_13/%s/GEN-SIM'%(baseDataSetRelease[6],),location='STD')} 
+steps['Pythia6_BuJpsiK_TuneZ2star_13INPUT']={'INPUT':InputInfo(dataSet='/RelValPythia6_BuJpsiK_TuneZ2star_13/%s/GEN-SIM'%(baseDataSetRelease[0],),location='STD')} 
 steps['BeamHalo_13INPUT']={'INPUT':InputInfo(dataSet='/RelValBeamHalo_13/%s/GEN-SIM'%(baseDataSetRelease[6],),location='STD')}
 # particle guns with postLS1 geometry recycle GEN-SIM input
 steps['SingleElectronPt10_UP15INPUT']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt10_UP15/%s/GEN-SIM'%(baseDataSetRelease[6],),location='STD')}
