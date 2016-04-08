@@ -1115,6 +1115,21 @@ steps['RECOUP15_PU25HS']=merge([PU25HS,step3Up2015Defaults])
 #steps['RECOmAOD']=merge([step3DefaultsUnsch])
 #steps['RECOmAODUP15']=merge([step3Up2015DefaultsUnsch])
 
+### for skim step
+stepSkimDefaults = {'-s'            :'SKIM:all',
+                  '--conditions'    :'auto:run2_data_relval',
+                  '--data'          :'',
+                  '--no_output'     :'',
+                  '--runUnscheduled':'',
+                  '--filein'        :'file:step3.root'
+                  }
+
+steps['SKIM_SingleMuon']=merge([{ '-s':'SKIM:ZMu+MuTau'},stepSkimDefaults])
+steps['SKIM_DoubleEG']=merge([{ '-s':'SKIM:ZElectron'},stepSkimDefaults])
+steps['SKIM_MuonEG']=merge([{ '-s':'SKIM:TopMuEG'},stepSkimDefaults])
+steps['SKIM_JetHT']=merge([{ '-s':'SKIM:HighMET'},stepSkimDefaults])
+
+
 
 # for premixing: no --pileup_input for replay; GEN-SIM only available for in-time event, from FEVTDEBUGHLT previous step
 steps['RECOPRMXUP15_PU25']=merge([
