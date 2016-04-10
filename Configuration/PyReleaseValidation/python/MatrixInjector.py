@@ -194,7 +194,9 @@ class MatrixInjector(object):
             wmsplit['RECOAODUP15']=5
             wmsplit['DBLMINIAODMCUP15NODQM']=5
             wmsplit['SKIM_SingleMuon']=1
-
+            wmsplit['SKIM_DoubleEG']=1
+            wmsplit['SKIM_MuonEG']=1
+            wmsplit['SKIM_JetHT']=1
                                     
             #import pprint
             #pprint.pprint(wmsplit)            
