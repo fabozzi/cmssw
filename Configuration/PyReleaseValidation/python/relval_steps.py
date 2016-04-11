@@ -1087,6 +1087,17 @@ steps['RECODR2_25nsreHLT']=merge([{'--hltProcess':'reHLT'},steps['RECODR2_25ns']
 steps['RECODR2_50nsreHLT']=merge([{'--hltProcess':'reHLT'},steps['RECODR2_50ns']])
 steps['RECODR2reHLTAlCaEle']=merge([{'--hltProcess':'reHLT','--conditions':'auto:run2_data_relval'},steps['RECODR2AlCaEle']])
 
+# step for reco+skim
+steps['RECODR2_25nsreHLT_skimSingleMuon']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:ZMu+MuTau,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+steps['RECODR2_25nsreHLT_skimDoubleEG']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:ZElectron,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+steps['RECODR2_25nsreHLT_skimMuonEG']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:TopMuEG,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+steps['RECODR2_25nsreHLT_skimJetHT']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:HighMET,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+
+# step for reco+skim with prompt skim dataset in input
+steps['RECODR2_25nsreHLT_skimDoubleEG_RR']=merge([{'--inputCommands':'"keep *","drop *_*_*_RECO"'},steps['RECODR2_25nsreHLT_skimDoubleEG']])
+steps['RECODR2_25nsreHLT_skimSingleMuon_RR']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:ZMu,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM','--inputCommands':'"keep *","drop *_*_*_RECO"'},steps['RECODR2_25nsreHLT_skimSingleMuon']])
+
+
 steps['RECO']=merge([step3Defaults])
 steps['RECOAlCaCalo']=merge([step3DefaultsAlCaCalo])
 steps['RECODBG']=merge([{'--eventcontent':'RECODEBUG,DQM'},steps['RECO']])
