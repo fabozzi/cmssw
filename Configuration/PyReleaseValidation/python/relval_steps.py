@@ -1087,6 +1087,17 @@ steps['RECODR2_25nsreHLT']=merge([{'--hltProcess':'reHLT'},steps['RECODR2_25ns']
 steps['RECODR2_50nsreHLT']=merge([{'--hltProcess':'reHLT'},steps['RECODR2_50ns']])
 steps['RECODR2reHLTAlCaEle']=merge([{'--hltProcess':'reHLT','--conditions':'auto:run2_data_relval'},steps['RECODR2AlCaEle']])
 
+# step for reco+skim
+steps['RECODR2_25nsreHLT_skimSingleMuon']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:ZMu+MuTau,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+steps['RECODR2_25nsreHLT_skimDoubleEG']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:ZElectron,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+steps['RECODR2_25nsreHLT_skimMuonEG']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:TopMuEG,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+steps['RECODR2_25nsreHLT_skimJetHT']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:HighMET,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM'},steps['RECODR2_25nsreHLT']])
+
+steps['RECODR2_25nsreHLT_skimDoubleEG_RR']=merge([{'--inputCommands':'"keep *","drop *_*_*_RECO"'},steps['RECODR2_25nsreHLT_skimDoubleEG']])
+steps['RECODR2_25nsreHLT_skimSingleMuon_RR']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,SKIM:ZMu,EI,PAT,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalESAlign,DQM:@standardDQM+@miniAODDQM','--inputCommands':'"keep *","drop *_*_*_RECO"'},steps['RECODR2_25nsreHLT_skimSingleMuon']])
+
+
+
 steps['RECO']=merge([step3Defaults])
 steps['RECOAlCaCalo']=merge([step3DefaultsAlCaCalo])
 steps['RECODBG']=merge([{'--eventcontent':'RECODEBUG,DQM'},steps['RECO']])
@@ -1115,19 +1126,19 @@ steps['RECOUP15_PU25HS']=merge([PU25HS,step3Up2015Defaults])
 #steps['RECOmAOD']=merge([step3DefaultsUnsch])
 #steps['RECOmAODUP15']=merge([step3Up2015DefaultsUnsch])
 
-### for skim step
-stepSkimDefaults = {'-s'            :'SKIM:all',
-                  '--conditions'    :'auto:run2_data_relval',
-                  '--data'          :'',
-                  '--no_output'     :'',
-                  '--runUnscheduled':'',
-                  '--filein'        :'file:step3.root'
-                  }
+### for standalone skim step
+#stepSkimDefaults = {'-s'            :'SKIM:all',
+#                  '--conditions'    :'auto:run2_data_relval',
+#                  '--data'          :'',
+#                  '--no_output'     :'',
+#                  '--runUnscheduled':'',
+#                  '--filein'        :'file:step3.root'
+#                  }
 
-steps['SKIM_SingleMuon']=merge([{ '-s':'SKIM:ZMu+MuTau'},stepSkimDefaults])
-steps['SKIM_DoubleEG']=merge([{ '-s':'SKIM:ZElectron'},stepSkimDefaults])
-steps['SKIM_MuonEG']=merge([{ '-s':'SKIM:TopMuEG'},stepSkimDefaults])
-steps['SKIM_JetHT']=merge([{ '-s':'SKIM:HighMET'},stepSkimDefaults])
+#steps['SKIM_SingleMuon']=merge([{ '-s':'SKIM:ZMu+MuTau'},stepSkimDefaults])
+#steps['SKIM_DoubleEG']=merge([{ '-s':'SKIM:ZElectron'},stepSkimDefaults])
+#steps['SKIM_MuonEG']=merge([{ '-s':'SKIM:TopMuEG'},stepSkimDefaults])
+#steps['SKIM_JetHT']=merge([{ '-s':'SKIM:HighMET'},stepSkimDefaults])
 
 
 
