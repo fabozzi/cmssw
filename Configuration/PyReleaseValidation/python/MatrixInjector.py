@@ -86,7 +86,7 @@ class MatrixInjector(object):
         self.defaultChain={
             "RequestType" :    "TaskChain",                    #this is how we handle relvals
             "SubRequestType" : "RelVal",                       #this is how we handle relvals, now that TaskChain is also used for central MC production
-            "RequestPriority": 500000,
+            "RequestPriority": 501000,
             "Requestor": self.user,                           #Person responsible
             "Group": self.group,                              #group for the request
             "CMSSWVersion": os.getenv('CMSSW_VERSION'),       #CMSSW Version (used for all tasks in chain)
@@ -192,6 +192,11 @@ class MatrixInjector(object):
             wmsplit['RECOUP15']=5
             wmsplit['RECOAODUP15']=5
             wmsplit['DBLMINIAODMCUP15NODQM']=5
+            wmsplit['DIGIUP15_reHLT']=1
+            wmsplit['RECOUP15_reHLT']=1
+            wmsplit['REHLTUP15_reHLT']=1
+            wmsplit['MINIAODUP15_reHLT']=1
+            wmsplit['DIGIUP15_PU25_reHLT']=1
 
                                     
             #import pprint
