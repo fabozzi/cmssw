@@ -288,9 +288,9 @@ baseDataSetRelease=[
 #    'CMSSW_7_1_0_pre5-START71_V1-v2',                      # 3 8 TeV , for the one sample which is part of the routine relval production (RelValZmumuJets_Pt_20_300, because of -v2)
                                                             # THIS ABOVE IS NOT USED, AT THE MOMENT
     #'CMSSW_7_6_0_pre7-76X_mcRun2_asymptotic_v9_realBS-v1',         # 3 - 13 TeV samples with GEN-SIM from 750_p4; also GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
-    #'CMSSW_7_1_20_patch2-MCRUN2_71_V1_GsRealBS-v1',        # 3 - 13 TeV samples with GEN-SIM from 7120p2; also GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
-    #'CMSSW_8_0_7-80X_mcRun2_asymptotic_v12-v1',        # 3 - 13 TeV samples with GENSIM from 807 for some LHE-based workflows
-    'CMSSW_8_0_10-80X_mcRun2_asymptotic_v14_HighStat-v1',        # 3 - 13 TeV samples with GENSIM from 8010 for 30k high stats workflows for HLT validation
+    'CMSSW_7_1_20_patch2-MCRUN2_71_V1_GsRealBS-v1',        # 3 - 13 TeV samples with GEN-SIM from 7120p2; also GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
+#    'CMSSW_8_0_7-80X_mcRun2_asymptotic_v12-v1',        # 3 - 13 TeV samples with GENSIM from 807 for some LHE-based workflows
+#    'CMSSW_8_0_10-80X_mcRun2_asymptotic_v14_HighStat-v1',        # 3 - 13 TeV samples with GENSIM from 8010 for 30k high stats workflows for HLT validation
     'CMSSW_7_3_0_pre1-PRE_LS172_V15_FastSim-v1',                   # 4 - fast sim GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
     'CMSSW_8_0_0-PU25ns_80X_mcRun2_asymptotic_v4-v1',      # 5 - fullSim PU 25ns premix for 800pre6
     'CMSSW_8_0_0-PU50ns_80X_mcRun2_startup_v4-v1',         # 6 - fullSim PU 50ns premix for 800pre6
@@ -887,13 +887,15 @@ step2Upg2015Defaults50ns = merge([{'-s':'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relva
 
 steps['DIGIUP15']=merge([step2Upg2015Defaults])
 
-steps['DIGIUP15_reHLT']={'-s'     :'DIGI,L1,DIGI2RAW',
+steps['DIGIUP15_reHLT']={'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2016',
                  '--conditions'  :'auto:run2_mc',
-                 '--datatier'    :'GEN-SIM-RAW',
-                 '--eventcontent':'RAWSIM',
+                 '--customise_commands':'"process.simHcalDigis.markAndPass = cms.bool(True)"',
+                 '--datatier'    :'GEN-SIM-DIGI-RAW-HLTDEBUG',
+                 '--eventcontent':'FEVTDEBUGHLT',
                  '--era'         :'Run2_2016',
                  '-n'            :'10'
                   }
+
 
 steps['DIGIUP15_PU25_reHLT']=merge([PU25,steps['DIGIUP15_reHLT']])
 
@@ -1136,8 +1138,11 @@ steps['RECOUP15_reHLT'] = {
 steps['RECOUP15_PU25_reHLT']=merge([PU25,steps['RECOUP15_reHLT']])
 
 steps['REHLTUP15_reHLT'] = {
-      '-s':'L1REPACK:FullMC,HLT:@relval2016',
+      '-s':'L1REPACK:FullMC,HLT:@relval2016,RAW2DIGI:L1TRawToDigi',
       '--conditions':'auto:run2_mc',
+      '--process':'HLT2',
+      '--inputCommands' : '"keep *","drop *_TriggerResults_*_HLT","drop *_hltTriggerSummaryAOD_*_HLT","drop *_hltGtStage2ObjectMap_*_HLT","drop *_l1extraParticles_*_RECO","drop L1GlobalTriggerReadoutRecord_gtDigis_*_RECO","drop *_cscSegments_*_RECO","drop *_dt4DSegments_*_RECO","drop *_rpcRecHits_*_RECO"',
+      '--customise_commands':'"process.AODSIMoutput.outputCommands.append(\'drop L1GlobalTriggerReadoutRecord_gtDigis_*_HLT2\')"',
       '--datatier':'AODSIM',
       '--eventcontent':'AODSIM',
       '--era' : 'Run2_2016',
@@ -1148,6 +1153,7 @@ steps['MINIAODUP15_reHLT'] = {
                  '--conditions':'auto:run2_mc',
                  '-s':'PAT,DQM:@miniAODDQM,VALIDATION:@miniAODValidation',
                  '--runUnscheduled':'',
+                 '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')"',
                  '--datatier' : 'MINIAODSIM,DQMIO',
                  '--eventcontent':'MINIAODSIM,DQM',
                  '--era' : 'Run2_2016',
