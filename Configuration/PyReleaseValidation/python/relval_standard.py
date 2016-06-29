@@ -163,6 +163,43 @@ workflows[136.732] = ['',['RunZeroBias2016B','HLTDR2_2016','RECODR2_2016reHLT','
 workflows[136.733] = ['',['RunCosmics2016B','RECOCOSDRUN2','ALCACOSDRUN2','HARVESTDCRUN2']]
 workflows[136.734] = ['',['RunMuOnia2016B','HLTDR2_2016','RECODR2_2016reHLT_skimMuOnia','HARVESTDR2']]
 
+### run 2016B custom wf for tracking studies ###
+### https://twiki.cern.ch/twiki/bin/view/CMS/VirginRawData2016 ###
+workflows[136.7211] = ['',['RunVRRandom02016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7212] = ['',['RunVRRandom12016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7213] = ['',['RunVRRandom22016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7214] = ['',['RunVRRandom32016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7215] = ['',['RunVRRandom42016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7216] = ['',['RunVRRandom52016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7217] = ['',['RunVRRandom62016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7218] = ['',['RunVRRandom72016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7221] = ['',['RunVRZeroBias02016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7222] = ['',['RunVRZeroBias12016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7223] = ['',['RunVRZeroBias22016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7224] = ['',['RunVRZeroBias32016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7225] = ['',['RunVRZeroBias42016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7226] = ['',['RunVRZeroBias52016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7227] = ['',['RunVRZeroBias62016B','RECODR2_IMA','HARVESTDR2_CT']]
+workflows[136.7228] = ['',['RunVRZeroBias72016B','RECODR2_IMA','HARVESTDR2_CT']]
+
+#workflows[136.7211] = ['',['RunVRRandom02016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7212] = ['',['RunVRRandom12016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7213] = ['',['RunVRRandom22016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7214] = ['',['RunVRRandom32016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7215] = ['',['RunVRRandom42016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7216] = ['',['RunVRRandom52016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7217] = ['',['RunVRRandom62016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7218] = ['',['RunVRRandom72016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7221] = ['',['RunVRZeroBias02016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7222] = ['',['RunVRZeroBias12016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7223] = ['',['RunVRZeroBias22016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7224] = ['',['RunVRZeroBias32016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7225] = ['',['RunVRZeroBias42016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7226] = ['',['RunVRZeroBias52016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7227] = ['',['RunVRZeroBias62016B','RECODR2_MA','HARVESTDR2_CT']]
+#workflows[136.7228] = ['',['RunVRZeroBias72016B','RECODR2_MA','HARVESTDR2_CT']]
+
+
 ### fastsim ###
 workflows[5.1] = ['TTbar', ['TTbarFS','HARVESTFS']]
 workflows[5.2] = ['SingleMuPt10', ['SingleMuPt10FS','HARVESTFS']]

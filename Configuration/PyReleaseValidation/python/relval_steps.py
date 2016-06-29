@@ -200,6 +200,27 @@ steps['RunSinglePh2016B']={'INPUT':InputInfo(dataSet='/SinglePhoton/Run2016B-v2/
 steps['RunZeroBias2016B']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2016B-v2/RAW',label='zb2016B',events=100000,location='STD', ls=Run2016B)}
 steps['RunMuOnia2016B']={'INPUT':InputInfo(dataSet='/MuOnia/Run2016B-v2/RAW',label='muOnia2016B',events=100000,location='STD', ls=Run2016B)}
 
+### run 2016B custom wf for tracking studies ###
+### https://twiki.cern.ch/twiki/bin/view/CMS/VirginRawData2016 ###
+steps['RunVRRandom02016B']={'INPUT':InputInfo(dataSet='/VRRandom0/Run2016B-v2/RAW',label='Rand02016B',events=100000,location='STD', run=[273162])}
+steps['RunVRRandom12016B']={'INPUT':InputInfo(dataSet='/VRRandom1/Run2016B-v2/RAW',label='Rand12016B',events=100000,location='STD', run=[273162])}
+steps['RunVRRandom22016B']={'INPUT':InputInfo(dataSet='/VRRandom2/Run2016B-v2/RAW',label='Rand22016B',events=100000,location='STD', run=[273162])}
+steps['RunVRRandom32016B']={'INPUT':InputInfo(dataSet='/VRRandom3/Run2016B-v2/RAW',label='Rand32016B',events=100000,location='STD', run=[273162])}
+steps['RunVRRandom42016B']={'INPUT':InputInfo(dataSet='/VRRandom4/Run2016B-v2/RAW',label='Rand42016B',events=100000,location='STD', run=[273162])}
+steps['RunVRRandom52016B']={'INPUT':InputInfo(dataSet='/VRRandom5/Run2016B-v2/RAW',label='Rand52016B',events=100000,location='STD', run=[273162])}
+steps['RunVRRandom62016B']={'INPUT':InputInfo(dataSet='/VRRandom6/Run2016B-v2/RAW',label='Rand62016B',events=100000,location='STD', run=[273162])}
+steps['RunVRRandom72016B']={'INPUT':InputInfo(dataSet='/VRRandom7/Run2016B-v2/RAW',label='Rand72016B',events=100000,location='STD', run=[273162])}
+
+steps['RunVRZeroBias02016B']={'INPUT':InputInfo(dataSet='/VRZeroBias0/Run2016B-v2/RAW',label='ZBias02016B',events=100000,location='STD', run=[273162])}
+steps['RunVRZeroBias12016B']={'INPUT':InputInfo(dataSet='/VRZeroBias1/Run2016B-v2/RAW',label='ZBias12016B',events=100000,location='STD', run=[273162])}
+steps['RunVRZeroBias22016B']={'INPUT':InputInfo(dataSet='/VRZeroBias2/Run2016B-v2/RAW',label='ZBias22016B',events=100000,location='STD', run=[273162])}
+steps['RunVRZeroBias32016B']={'INPUT':InputInfo(dataSet='/VRZeroBias3/Run2016B-v2/RAW',label='ZBias32016B',events=100000,location='STD', run=[273162])}
+steps['RunVRZeroBias42016B']={'INPUT':InputInfo(dataSet='/VRZeroBias4/Run2016B-v2/RAW',label='ZBias42016B',events=100000,location='STD', run=[273162])}
+steps['RunVRZeroBias52016B']={'INPUT':InputInfo(dataSet='/VRZeroBias5/Run2016B-v2/RAW',label='ZBias52016B',events=100000,location='STD', run=[273162])}
+steps['RunVRZeroBias62016B']={'INPUT':InputInfo(dataSet='/VRZeroBias6/Run2016B-v2/RAW',label='ZBias62016B',events=100000,location='STD', run=[273162])}
+steps['RunVRZeroBias72016B']={'INPUT':InputInfo(dataSet='/VRZeroBias7/Run2016B-v2/RAW',label='ZBias72016B',events=100000,location='STD', run=[273162])}
+
+
 # Highstat HLTPhysics 
 Run2015DHS=selectedLS([258712,258713,258714,258741,258742,258745,258749,258750,259626,259637,259683,259685,259686,259721,259809,259810,259818,259820,259821,259822,259862,259890,259891])
 steps['RunHLTPhy2015DHS']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2015D-v1/RAW',label='hltPhy2015DHS',events=100000,location='STD', ls=Run2015DHS)}
@@ -984,6 +1005,22 @@ dataReco={ '--runUnscheduled':'',
 dataRecoAlCaCalo=merge([{'-s':'RAW2DIGI,L1Reco,RECO,EI,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalCalZElectron+EcalCalWElectron+EcalUncalZElectron+EcalUncalWElectron+HcalCalIsoTrk,DQM'}, dataReco])
 
 
+dataReco2={ '--runUnscheduled':'',
+            '--conditions':'auto:run2_data',
+            '-s':'RAW2DIGI,L1Reco,RECO,DQM:@standardDQM',
+            '--era':'Run2_2016',
+            '--datatier':'RECO,DQMIO',
+            '--eventcontent':'RECO,DQM',
+            '--data':'',
+            '--process':'reRECO',
+            '--scenario':'pp',
+            '--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016'
+            }
+ 
+steps['RECODR2_IMA']=merge([{'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016','--customise_commands':'"process.siStripZeroSuppression.storeCM = cms.bool(True)\\n process.siStripZeroSuppression.produceRawDigis = cms.bool(True) \\n process.RECOEventContent.outputCommands.append(\'keep *_*_APVCM*_*\')"'},dataReco2]) 
+
+steps['RECODR2_MA']=merge([{'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016','--customise_commands':'"process.DefaultAlgorithms.doAPVRestore = cms.bool(False)\\n process.DefaultAlgorithms.PedestalSubtractionFedMode = cms.bool(True)\\n process.DefaultAlgorithms.CommonModeNoiseSubtractionMode = cms.string(\'Median\')\\n process.siStripZeroSuppression.storeCM = cms.bool(True)\\n process.siStripZeroSuppression.produceRawDigis = cms.bool(True) \\n process.RECOEventContent.outputCommands.append(\'keep *_*_APVCM*_*\')"'},dataReco2])
+
 hltKey='fake'
 menu = autoHLT[hltKey]
 steps['HLTD']=merge([{'--process':'reHLT',
@@ -1348,6 +1385,8 @@ steps['HARVESTDR1']={'-s':'HARVESTING:@standardDQMFakeHLT+@miniAODDQM',
 steps['HARVESTDreHLT'] = merge([ {'--conditions':'auto:run1_data_%s'%menu}, steps['HARVESTD'] ])
 steps['HARVESTDR1reHLT'] = merge([ {'--conditions':'auto:run1_data_%s'%menu}, steps['HARVESTDR1'] ])
 steps['HARVESTDR2'] = merge([ {'--conditions':'auto:run2_data_relval'}, steps['HARVESTD'] ])
+
+steps['HARVESTDR2_CT'] = merge([ {'-s':'HARVESTING:@standardDQM','--conditions':'auto:run2_data'}, steps['HARVESTD'] ])
 
 steps['HARVESTDDQM']=merge([{'-s':'HARVESTING:@common+@muon+@hcal+@jetmet+@ecal'},steps['HARVESTD']])
 
