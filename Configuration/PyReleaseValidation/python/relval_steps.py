@@ -220,6 +220,9 @@ steps['RunVRZeroBias52016B']={'INPUT':InputInfo(dataSet='/VRZeroBias5/Run2016B-v
 steps['RunVRZeroBias62016B']={'INPUT':InputInfo(dataSet='/VRZeroBias6/Run2016B-v2/RAW',label='ZBias62016B',events=100000,location='STD', run=[273162])}
 steps['RunVRZeroBias72016B']={'INPUT':InputInfo(dataSet='/VRZeroBias7/Run2016B-v2/RAW',label='ZBias72016B',events=100000,location='STD', run=[273162])}
 
+### run 2016C custom wf for tracking studies ###
+steps['RunVRZeroBiasErr2016C']={'INPUT':InputInfo(dataSet='/VirginRawZeroBias-Error/Run2016C-v2/RAW',label='ZBiasErr2016C',events=100000,location='STD', run=[276226])}
+
 
 # Highstat HLTPhysics 
 Run2015DHS=selectedLS([258712,258713,258714,258741,258742,258745,258749,258750,259626,259637,259683,259685,259686,259721,259809,259810,259818,259820,259821,259822,259862,259890,259891])
@@ -1017,9 +1020,9 @@ dataReco2={ '--runUnscheduled':'',
             '--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016'
             }
  
-steps['RECODR2_IMA']=merge([{'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016','--customise_commands':'"process.siStripZeroSuppression.storeCM = cms.bool(True)\\n process.siStripZeroSuppression.produceRawDigis = cms.bool(True) \\n process.RECOEventContent.outputCommands.append(\'keep *_*_APVCM*_*\')"'},dataReco2]) 
+steps['RECODR2_IMA']=merge([{'--conditions':'80X_dataRun2_Prompt_v9','--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016','--customise_commands':'"process.siStripZeroSuppression.storeCM = cms.bool(True)\\n process.siStripZeroSuppression.produceRawDigis = cms.bool(True) \\n process.RECOEventContent.outputCommands.append(\'keep *_*_APVCM*_*\')"'},dataReco2]) 
 
-steps['RECODR2_MA']=merge([{'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016','--customise_commands':'"process.DefaultAlgorithms.doAPVRestore = cms.bool(False)\\n process.DefaultAlgorithms.PedestalSubtractionFedMode = cms.bool(True)\\n process.DefaultAlgorithms.CommonModeNoiseSubtractionMode = cms.string(\'Median\')\\n process.siStripZeroSuppression.storeCM = cms.bool(True)\\n process.siStripZeroSuppression.produceRawDigis = cms.bool(True) \\n process.RECOEventContent.outputCommands.append(\'keep *_*_APVCM*_*\')"'},dataReco2])
+steps['RECODR2_MA']=merge([{'--conditions':'80X_dataRun2_Prompt_v9','--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016','--customise_commands':'"process.DefaultAlgorithms.doAPVRestore = cms.bool(False)\\n process.DefaultAlgorithms.PedestalSubtractionFedMode = cms.bool(True)\\n process.DefaultAlgorithms.CommonModeNoiseSubtractionMode = cms.string(\'Median\')\\n process.siStripZeroSuppression.storeCM = cms.bool(True)\\n process.siStripZeroSuppression.produceRawDigis = cms.bool(True) \\n process.RECOEventContent.outputCommands.append(\'keep *_*_APVCM*_*\')"'},dataReco2])
 
 hltKey='fake'
 menu = autoHLT[hltKey]
@@ -1386,7 +1389,8 @@ steps['HARVESTDreHLT'] = merge([ {'--conditions':'auto:run1_data_%s'%menu}, step
 steps['HARVESTDR1reHLT'] = merge([ {'--conditions':'auto:run1_data_%s'%menu}, steps['HARVESTDR1'] ])
 steps['HARVESTDR2'] = merge([ {'--conditions':'auto:run2_data_relval'}, steps['HARVESTD'] ])
 
-steps['HARVESTDR2_CT'] = merge([ {'-s':'HARVESTING:@standardDQM','--conditions':'auto:run2_data'}, steps['HARVESTD'] ])
+#steps['HARVESTDR2_CT'] = merge([ {'-s':'HARVESTING:@standardDQM','--conditions':'auto:run2_data'}, steps['HARVESTD'] ])
+steps['HARVESTDR2_CT'] = merge([ {'-s':'HARVESTING:@standardDQM','--conditions':'80X_dataRun2_Prompt_v9'}, steps['HARVESTD'] ])
 
 steps['HARVESTDDQM']=merge([{'-s':'HARVESTING:@common+@muon+@hcal+@jetmet+@ecal'},steps['HARVESTD']])
 

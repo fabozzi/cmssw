@@ -199,6 +199,12 @@ workflows[136.7228] = ['',['RunVRZeroBias72016B','RECODR2_IMA','HARVESTDR2_CT']]
 #workflows[136.7227] = ['',['RunVRZeroBias62016B','RECODR2_MA','HARVESTDR2_CT']]
 #workflows[136.7228] = ['',['RunVRZeroBias72016B','RECODR2_MA','HARVESTDR2_CT']]
 
+### run 2016C custom wf for tracking studies ###
+workflows[137.7211] = ['',['RunVRZeroBiasErr2016C','RECODR2_IMA','HARVESTDR2_CT']]
+
+#workflows[137.7211] = ['',['RunVRZeroBiasErr2016C','RECODR2_MA','HARVESTDR2_CT']]
+
+
 
 ### fastsim ###
 workflows[5.1] = ['TTbar', ['TTbarFS','HARVESTFS']]
