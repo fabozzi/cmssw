@@ -165,6 +165,21 @@ workflows[136.734] = ['',['RunMuOnia2016B','HLTDR2_2016','RECODR2_2016reHLT_skim
 workflows[136.735] = ['',['RunNoBPTX2016B','HLTDR2_2016','RECODR2reHLTAlCaTkCosmics','HARVESTDR2']]
 workflows[136.7321] = ['',['RunZeroBias2016BnewL1repack','HLTDR2newL1repack_2016','RECODR2newL1repack_2016reHLT','HARVESTDR2']]
 
+### run 2016C ###
+workflows[137.721] = ['',['RunHLTPhy2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+workflows[137.722] = ['',['RunDoubleEG2016C','HLTDR2_2016','RECODR2_2016reHLT_skimDoubleEG','HARVESTDR2']]
+workflows[137.723] = ['',['RunDoubleMuon2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+workflows[137.724] = ['',['RunJetHT2016C','HLTDR2_2016','RECODR2_2016reHLT_skimJetHT','HARVESTDR2']]
+workflows[137.725] = ['',['RunMET2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+workflows[137.726] = ['',['RunMuonEG2016C','HLTDR2_2016','RECODR2_2016reHLT_skimMuonEG','HARVESTDR2']]
+workflows[137.727] = ['',['RunDoubleEGPrpt2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+workflows[137.728] = ['',['RunSingleMuPrpt2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+workflows[137.729] = ['',['RunSingleEl2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+workflows[137.730] = ['',['RunSingleMu2016C','HLTDR2_2016','RECODR2_2016reHLT_skimSingleMu','HARVESTDR2']]
+workflows[137.731] = ['',['RunSinglePh2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+workflows[137.732] = ['',['RunZeroBias2016C','HLTDR2_2016','RECODR2_2016reHLT','HARVESTDR2']]
+
+
 ### fastsim ###
 workflows[5.1] = ['TTbar', ['TTbarFS','HARVESTFS']]
 workflows[5.2] = ['SingleMuPt10', ['SingleMuPt10FS','HARVESTFS']]
@@ -269,6 +284,9 @@ workflows[1339] = ['', ['QCD_Pt_600_800_13','DIGIUP15','RECOUP15','HARVESTUP15']
 workflows[1347] = ['', ['Upsilon1SToMuMu_13','DIGIUP15','RECOUP15','HARVESTUP15']]
 workflows[1349] = ['', ['BsToMuMu_13','DIGIUP15','RECOUP15','HARVESTUP15']]
 workflows[1350] = ['', ['JpsiMuMu_Pt-8','DIGIUP15','RECOUP15','HARVESTUP15']]
+workflows[1364] = ['', ['BdToMuMu_13','DIGIUP15','RECOUP15','HARVESTUP15']]
+workflows[1365] = ['', ['BuToJpsiK_13','DIGIUP15','RECOUP15','HARVESTUP15']]
+workflows[1366] = ['', ['BsToJpsiPhi_13','DIGIUP15','RECOUP15','HARVESTUP15']]
 
 workflows[1325] = ['', ['TTbar_13','DIGIUP15','RECOUP15','HARVESTUP15','ALCATTUP15']]
 # the 3 workflows below are for tracking-specific ib test, not to be run in standard relval set.

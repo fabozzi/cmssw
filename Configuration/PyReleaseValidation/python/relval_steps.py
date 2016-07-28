@@ -203,6 +203,22 @@ steps['RunMuOnia2016B']={'INPUT':InputInfo(dataSet='/MuOnia/Run2016B-v2/RAW',lab
 steps['RunNoBPTX2016B']={'INPUT':InputInfo(dataSet='/NoBPTX/Run2016B-v2/RAW',label='noBptx2016B',events=100000,location='STD', ls=Run2016B)}
 steps['RunZeroBias2016BnewL1repack']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2016B-v2/RAW',label='zb2016BnewL1rep',events=100000,location='STD', ls=Run2016B)}
 
+#### run2 2016C ####
+Run2016C=selectedLS([275657],l_json=data_json2016)
+steps['RunHLTPhy2016C']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2016C-v2/RAW',label='hltPhy2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunDoubleEG2016C']={'INPUT':InputInfo(dataSet='/DoubleEG/Run2016C-v2/RAW',label='doubEG2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunDoubleMuon2016C']={'INPUT':InputInfo(dataSet='/DoubleMuon/Run2016C-v2/RAW',label='doubMu2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunJetHT2016C']={'INPUT':InputInfo(dataSet='/JetHT/Run2016C-v2/RAW',label='jetHT2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunMET2016C']={'INPUT':InputInfo(dataSet='/MET/Run2016C-v2/RAW',label='met2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunMuonEG2016C']={'INPUT':InputInfo(dataSet='/MuonEG/Run2016C-v2/RAW',label='muEG2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunDoubleEGPrpt2016C']={'INPUT':InputInfo(dataSet='/DoubleEG/Run2016C-ZElectron-PromptReco-v2/RAW-RECO',label='dbEGPrpt2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunSingleMuPrpt2016C']={'INPUT':InputInfo(dataSet='/SingleMuon/Run2016C-ZMu-PromptReco-v2/RAW-RECO',label='sgMuPrpt2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunSingleEl2016C']={'INPUT':InputInfo(dataSet='/SingleElectron/Run2016C-v2/RAW',label='sigEl2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunSingleMu2016C']={'INPUT':InputInfo(dataSet='/SingleMuon/Run2016C-v2/RAW',label='sigMu2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunSinglePh2016C']={'INPUT':InputInfo(dataSet='/SinglePhoton/Run2016C-v2/RAW',label='sigPh2016C',events=100000,location='STD', ls=Run2016C)}
+steps['RunZeroBias2016C']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2016C-v2/RAW',label='zb2016C',events=100000,location='STD', ls=Run2016C)}
+
+
 # Highstat HLTPhysics 
 Run2015DHS=selectedLS([258712,258713,258714,258741,258742,258745,258749,258750,259626,259637,259683,259685,259686,259721,259809,259810,259818,259820,259821,259822,259862,259890,259891])
 steps['RunHLTPhy2015DHS']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2015D-v1/RAW',label='hltPhy2015DHS',events=100000,location='STD', ls=Run2015DHS)}
@@ -381,6 +397,9 @@ steps['Higgs200ChargedTaus_13INPUT']={'INPUT':InputInfo(dataSet='/RelValHiggs200
 steps['Upsilon1SToMuMu_13INPUT']={'INPUT':InputInfo(dataSet='/RelValUpsilon1SToMuMu_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 steps['BsToMuMu_13INPUT']={'INPUT':InputInfo(dataSet='/RelValBsToMuMu_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 steps['JpsiMuMu_Pt-8INPUT']={'INPUT':InputInfo(dataSet='/RelValJpsiMuMu_Pt-8/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
+steps['BdToMuMu_13INPUT']={'INPUT':InputInfo(dataSet='/RelValBdToMuMu_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
+steps['BuToJpsiK_13INPUT']={'INPUT':InputInfo(dataSet='/RelValBuToJpsiK_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
+steps['BsToJpsiPhi_13INPUT']={'INPUT':InputInfo(dataSet='/RelValBsToJpsiPhi_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 
 steps['PhiToMuMu_13INPUT']={'INPUT':InputInfo(dataSet='/RelValPhiToMuMu_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 steps['EtaBToJpsiJpsi_13INPUT']={'INPUT':InputInfo(dataSet='/RelValEtaBToJpsiJpsi_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
@@ -471,8 +490,11 @@ steps['ZMM']=genS('ZMM_8TeV_TuneCUETP8M1_cfi',Kby(18,300))
 steps['ZpMM']=genS('ZpMM_8TeV_TuneCUETP8M1_cfi',Kby(9,200))
 steps['Higgs200ChargedTaus_13']=gen2015('H200ChargedTaus_Tauola_13TeV_cfi',Kby(9,100))
 steps['Upsilon1SToMuMu_13']=gen2015('Upsilon1SToMuMu_forSTEAM_13TeV_TuneCUETP8M1_cfi',Kby(17,190)) 
-steps['BsToMuMu_13']=gen2015('BsToMuMu_forSTEAM_13TeV_TuneCUETP8M1_cfi',Kby(30000,150000))
+steps['BsToMuMu_13']=gen2015('BsToMuMu_13TeV_SoftQCDnonD_TuneCUEP8M1_cfi.py',Kby(21000,150000))
 steps['JpsiMuMu_Pt-8']=gen2015('JpsiMuMu_Pt-8_forSTEAM_13TeV_TuneCUETP8M1_cfi',Kby(3100,100000))
+steps['BdToMuMu_13']=gen2015('BdToMuMu_13TeV_SoftQCDnonD_TuneCUEP8M1_cfi',Kby(6000,60000))
+steps['BuToJpsiK_13']=gen2015('BuToJpsiK_13TeV_SoftQCDnonD_TuneCUEP8M1_cfi',Kby(16000,160000))
+steps['BsToJpsiPhi_13']=gen2015('BsToJpsiPhi_13TeV_SoftQCDnonD_TuneCUEP8M1_cfi',Kby(78000,400000))
 steps['WE_13']=gen2015('WE_13TeV_TuneCUETP8M1_cfi',Kby(9,100))
 steps['WM_13']=gen2015('WM_13TeV_TuneCUETP8M1_cfi',Kby(9,200))
 steps['WpM_13']=gen2015('WpM_13TeV_TuneCUETP8M1_cfi',Kby(9,200))
