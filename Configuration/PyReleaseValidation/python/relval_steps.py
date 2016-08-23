@@ -15,8 +15,19 @@ step1Defaults = {'--relval'      : None, # need to be explicitly set
 # step1 gensim: for postLS1
 step1Up2015Defaults = {'-s' : 'GEN,SIM',
                              '-n'            : 10,
-                             '--conditions'  : 'auto:run2_mc',
-                             '--beamspot'    : 'Realistic50ns13TeVCollision',
+#                             '--conditions'  : 'auto:run2_mc',
+#                             '--beamspot'    : 'Realistic50ns13TeVCollision',
+#                             '--conditions'  : '80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_minus2cm_v0', 
+#                             '--conditions'  : '80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_minus1cm_v0',
+#                             '--conditions'  : '80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_0cm_v0',
+#                             '--conditions'  : '80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_1cm_v0',
+                             '--conditions'  : '80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_2cm_v0',
+                             '--beamspot'    : 'Realistic25ns13TeV2016Collision',
+#                             '--customise_commands' : '"process.VtxSmeared.Z0 = cms.double(-2.0)\\n"',
+#                             '--customise_commands' : '"process.VtxSmeared.Z0 = cms.double(-1.0)\\n"',
+#                             '--customise_commands' : '"process.VtxSmeared.Z0 = cms.double(0.0)\\n"',
+#                             '--customise_commands' : '"process.VtxSmeared.Z0 = cms.double(1.0)\\n"',
+                             '--customise_commands' : '"process.VtxSmeared.Z0 = cms.double(2.0)\\n"',
                              '--datatier'    : 'GEN-SIM',
                              '--eventcontent': 'FEVTDEBUG',
                              '--era'         : 'Run2_2016'
@@ -265,7 +276,7 @@ steps['SingleMuPt1_UP15']=gen2015('SingleMuPt1_pythia8_cfi',Kby(25,1000))
 steps['SingleMuPt10_UP15']=gen2015('SingleMuPt10_pythia8_cfi',Kby(25,500))
 steps['SingleMuPt100_UP15']=gen2015('SingleMuPt100_pythia8_cfi',Kby(9,500))
 steps['SingleMuPt1000_UP15']=gen2015('SingleMuPt1000_pythia8_cfi',Kby(9,500))
-steps['NuGun_UP15']=gen2015('SingleNuE10_cfi.py',Kby(9,50))
+steps['NuGun_UP15']=gen2015('SingleNuE10_cfi.py',Kby(12,50))
 steps['TTbar']=gen('TTbar_8TeV_TuneCUETP8M1_cfi',Kby(9,100))
 steps['TTbarLepton']=gen('TTbarLepton_8TeV_TuneCUETP8M1_cfi',Kby(9,100))
 steps['ZEE']=gen('ZEE_8TeV_TuneCUETP8M1_cfi',Kby(9,100))
@@ -313,7 +324,12 @@ baseDataSetRelease=[
     'CMSSW_6_2_0_pre8-PRE_ST62_V8_FastSim-v1',              # 2 for fastsim id test
 #    'CMSSW_7_1_0_pre5-START71_V1-v2',                      # 3 8 TeV , for the one sample which is part of the routine relval production (RelValZmumuJets_Pt_20_300, because of -v2)
                                                             # THIS ABOVE IS NOT USED, AT THE MOMENT
-    'CMSSW_7_6_0_pre7-76X_mcRun2_asymptotic_v9_realBS-v1',         # 3 - 13 TeV samples with GEN-SIM from 750_p4; also GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
+#    'CMSSW_7_6_0_pre7-76X_mcRun2_asymptotic_v9_realBS-v1',         # 3 - 13 TeV samples with GEN-SIM from 750_p4; also GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
+#    'CMSSW_8_0_16-80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_minus2cm_v0_Z0m2-v1', # 3, Z0 = -2cm
+#    'CMSSW_8_0_16-80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_minus1cm_v0_Z0m1-v1', # 3, Z0 = -1cm
+#    'CMSSW_8_0_16-80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_0cm_v0_Z00-v1', # 3, Z0 = 0cm
+#    'CMSSW_8_0_16-80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_1cm_v0_Z0p1-v1', # 3, Z0 = 1cm
+    'CMSSW_8_0_16-80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_2cm_v0_Z0p2-v1', # 3, Z0 = 2cm
     'CMSSW_7_3_0_pre1-PRE_LS172_V15_FastSim-v1',                   # 4 - fast sim GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
     'CMSSW_8_0_0-PU25ns_80X_mcRun2_asymptotic_v4-v1',      # 5 - fullSim PU 25ns premix for 800pre6
     'CMSSW_8_0_0-PU50ns_80X_mcRun2_startup_v4-v1',         # 6 - fullSim PU 50ns premix for 800pre6
@@ -851,7 +867,19 @@ steps['BsToMuMu_forSTEAM_13TeV_TuneCUETP8M1']=genvalid('BsToMuMu_forSTEAM_13TeV_
 PU={'-n':10,'--pileup':'default','--pileup_input':'das:/RelValMinBias/%s/GEN-SIM'%(baseDataSetRelease[0],)}
 # pu2 can be removed
 PU2={'-n':10,'--pileup':'default','--pileup_input':'das:/RelValMinBias/%s/GEN-SIM'%(baseDataSetRelease[0],)}
-PU25={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
+#PU25={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
+#### NOTE THE customise_commands (the PU scenario is OK, need to change the beamspot each time)
+# Z0 = -2cm
+#PU25={'-n':10,'--conditions':'80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_minus2cm_v0','--pileup':'Flat_0_50_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],),'--customise_commands':'"process.mix.input.nbPileupEvents.probFunctionVariable = cms.vint32(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60)\\nprocess.mix.input.nbPileupEvents.probValue = cms.vdouble(0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393)\\n"'}
+# Z0 = -1cm
+#PU25={'-n':10,'--conditions':'80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_minus1cm_v0','--pileup':'Flat_0_50_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],),'--customise_commands':'"process.mix.input.nbPileupEvents.probFunctionVariable = cms.vint32(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60)\\nprocess.mix.input.nbPileupEvents.probValue = cms.vdouble(0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393)\\n"'}
+# Z0 = 0cm
+#PU25={'-n':10,'--conditions':'80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_0cm_v0','--pileup':'Flat_0_50_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],),'--customise_commands':'"process.mix.input.nbPileupEvents.probFunctionVariable = cms.vint32(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60)\\nprocess.mix.input.nbPileupEvents.probValue = cms.vdouble(0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393)\\n"'}
+# Z0 = 1cm
+#PU25={'-n':10,'--conditions':'80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_1cm_v0','--pileup':'Flat_0_50_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],),'--customise_commands':'"process.mix.input.nbPileupEvents.probFunctionVariable = cms.vint32(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60)\\nprocess.mix.input.nbPileupEvents.probValue = cms.vdouble(0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393)\\n"'}
+# Z0 = 2cm
+PU25={'-n':10,'--conditions':'80X_mcRun2_RealisticBS_25ns_13TeV2016_Z0_2cm_v0','--pileup':'Flat_0_50_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],),'--customise_commands':'"process.mix.input.nbPileupEvents.probFunctionVariable = cms.vint32(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60)\\nprocess.mix.input.nbPileupEvents.probValue = cms.vdouble(0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393,0.016393)\\n"'}
+
 PU50={'-n':10,'--pileup':'AVE_35_BX_50ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
 PUHI={'-n':10,'--pileup_input':'das:/RelValHydjetQ_MinBias_5020GeV/%s/GEN-SIM'%(baseDataSetRelease[9])}
 
