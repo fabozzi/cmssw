@@ -327,6 +327,12 @@ baseDataSetRelease=[
     'CMSSW_7_6_0-76X_mcRun2_asymptotic_v11-v1',                    # 10 - 13 TeV High Stats GEN-SIM
     'CMSSW_7_6_0_pre7-76X_mcRun2_asymptotic_v9_realBS-v1',         # 11 - 13 TeV High Stats MiniBias for mixing GEN-SIM
     'CMSSW_7_1_20_patch2-MCRUN2_71_V1_GsRealBS-v1',                # 12 - MiniBias GENSIM input for PU25 (separated from item 3)
+    'CMSSW_8_0_16-80X_mcRun2_asymptotic_v16_reHLT-v1',             # 13 - RAWAODSIM input for reHLT
+#    'CMSSW_8_0_16-PU25ns_80X_mcRun2_asymptotic_v16_reHLT-v1',             # RAWAODSIM input for reHLT
+#    'CMSSW_8_0_16-80X_mcRun2_asymptotic_v16_reHLT_HS-v1',             # RAWAODSIM input for reHLT
+#    'CMSSW_8_0_16-PU25ns_80X_mcRun2_asymptotic_v16_reHLT_HS-v1',             # RAWAODSIM input for reHLT
+#    'CMSSW_8_0_16-80X_mcRun2_asymptotic_v16_reHLT_HSLHE-v1',             # RAWAODSIM input for reHLT
+#    'CMSSW_8_0_16-PU25ns_80X_mcRun2_asymptotic_v16_reHLT_LHE_HS-v1',             # RAWAODSIM input for reHLT
     ]
 
 # note: INPUT commands to be added once GEN-SIM w/ 13TeV+PostLS1Geo will be available 
@@ -366,6 +372,7 @@ steps['QCD_Pt_600_800_13INPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_600_80
 steps['QCD_Pt_80_120_13INPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_80_120_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 steps['QCD_Pt_80_120_13_HIINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_80_120_13_HI/%s/GEN-SIM'%(baseDataSetRelease[1],),location='STD')}
 steps['TTbar_13INPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
+
 steps['TTbarLepton_13INPUT']={'INPUT':InputInfo(dataSet='/RelValTTbarLepton_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 steps['ZEE_13INPUT']={'INPUT':InputInfo(dataSet='/RelValZEE_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 #steps['ZEE_13_DBLMINIAODINPUT']={'INPUT':InputInfo(dataSet='/RelValZEE_13_DBLMINIAOD/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')} 
@@ -437,6 +444,56 @@ steps['NuGun_UP15INPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun_UP15/%s/GEN-SI
 #input for 13 TeV High Stats samples
 steps['ZMM_13_HSINPUT']={'INPUT':InputInfo(dataSet='/RelValZMM_13_HS/%s/GEN-SIM'%(baseDataSetRelease[10],),location='STD')} 
 steps['TTbar_13_HSINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13_HS/%s/GEN-SIM'%(baseDataSetRelease[10],),location='STD')}
+
+
+######## INPUT for reHLT from RAWAODSIM
+steps['ADDMonoJet_d3MD3_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValADDMonoJet_d3MD3_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['DisplacedSUSY_stopToBottom_M_300_1000mm_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValDisplacedSUSY_stopToBottom_M_300_1000mm_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['EtaBToJpsiJpsi_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValEtaBToJpsiJpsi_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['H125GGgluonfusion_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['HSCPstop_M_200_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValHSCPstop_M_200_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['QCD_Pt_3000_3500_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_3000_3500_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['QQH1352T_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['RSGravitonToGaGa_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValRSGravitonToGaGa_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['RSKKGluon_m3000GeV_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValRSKKGluon_m3000GeV_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleMuPt100_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt100_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleMuPt1000_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1000_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SMS-T1tttt_mGl-1500_mLSP-100_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValSMS-T1tttt_mGl-1500_mLSP-100_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['TTbar_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['TTbarLepton_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbarLepton_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['Upsilon1SToMuMu_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValUpsilon1SToMuMu_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['WM_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValWM_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['WpToENu_M-2000_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValWpToENu_M-2000_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['ZEE_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValZEE_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['ZMM_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValZMM_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['ZpEE_2250_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValZpEE_2250_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['ZpMM_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValZpMM_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['ZpTT_1500_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['ZTT_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValZTT_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['PhiToMuMu_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValPhiToMuMu_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['WpM_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValWpM_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleElectronPt10_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt10_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleMuPt10_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt10_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleElectronPt35_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt35_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['Wjet_Pt_3000_3500_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValWjet_Pt_3000_3500_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['QCD_Pt_600_800_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_600_800_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['NuGun_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleMuPt1_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['MinBias_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValMinBias_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleElectronPt1000_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt1000_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleGammaPt10_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleGammaPt10_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['SingleGammaPt35_UP15HINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleGammaPt35_UP15/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['WE_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValWE_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['PhotonJets_Pt_10_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValPhotonJets_Pt_10_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['Wjet_Pt_80_120_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValWjet_Pt_80_120_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['QCD_FlatPt_15_3000HS_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_FlatPt_15_3000HS_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['ZpMM_2250_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValZpMM_2250_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+
+
+
+steps['GluGluHToZZTo4L_M125_Pow_py8_Evt_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValGluGluHToZZTo4L_M125_Pow_py8_Evt_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['VBFHToBB_M125_Pow_py8_Evt_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToBB_M125_Pow_py8_Evt_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
+steps['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13HINPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToZZTo4Nu_M125_Pow_py8_Evt_13/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[13],),location='STD')}
 
 
 ## high stat step1
