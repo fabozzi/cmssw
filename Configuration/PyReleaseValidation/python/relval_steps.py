@@ -910,6 +910,7 @@ step2Upg2015Defaults = {'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2016'
                  '--eventcontent':'FEVTDEBUGHLT',
                  '--era'         :'Run2_2016',
                  '-n'            :'10',
+                 '--customise' : 'RecoTracker/Configuration/customizeMinPtForHitRecoveryInGluedDet.customizeHitRecoveryInGluedDetOff',
                   }
 step2Upg2015Defaults50ns = merge([{'-s':'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval50ns','--conditions':'auto:run2_mc_50ns','--era':'Run2_50ns'},step2Upg2015Defaults])
 
