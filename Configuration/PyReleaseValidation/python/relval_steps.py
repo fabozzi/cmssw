@@ -1599,7 +1599,10 @@ steps['DBLMINIAODMCUP15NODQM'] = merge([{'--conditions':'auto:run2_mc',
 from  Configuration.PyReleaseValidation.upgradeWorkflowComponents import *
 
 defaultDataSets={}
-defaultDataSets['2017']='CMSSW_8_1_0_pre9-81X_upgrade2017_realistic_v6_UPG17newGT-v'
+defaultDataSets['2017']='CMSSW_8_1_0_pre12-81X_upgrade2017_realistic_v13-v'
+defaultDataSets['2017NewFPix']='CMSSW_8_1_0_pre12-81X_upgrade2017_realistic_v13_BpixFpixGeom-v'
+defaultDataSets['2017HCALdev']='CMSSW_8_1_0_pre12-81X_upgrade2017_HCALdev_v2_HcalGeom-v'
+defaultDataSets['2017AllNew']='CMSSW_8_1_0_pre12-81X_upgrade2017_HCALdev_v2_BpixFpixHcalGeom-v'
 defaultDataSets['2023D1']=''
 defaultDataSets['2023D2']=''
 defaultDataSets['2023D3']=''

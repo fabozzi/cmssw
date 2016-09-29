@@ -10,6 +10,9 @@ upgradeKeys[2017] = [
     '2017NewFPix',
     '2017HCALdev',
     '2017AllNew',
+    '2017NewFPixPU',
+    '2017HCALdevPU',
+    '2017AllNewPU'
 ]
 
 upgradeKeys[2023] = [
@@ -84,7 +87,13 @@ upgradeProperties[2017] = {
 }
 
 upgradeProperties[2017]['2017PU'] = deepcopy(upgradeProperties[2017]['2017'])
+upgradeProperties[2017]['2017NewFPixPU'] = deepcopy(upgradeProperties[2017]['2017NewFPix'])
+upgradeProperties[2017]['2017HCALdevPU'] = deepcopy(upgradeProperties[2017]['2017HCALdev'])
+upgradeProperties[2017]['2017AllNewPU'] = deepcopy(upgradeProperties[2017]['2017AllNew'])
 upgradeProperties[2017]['2017PU']['ScenToRun'] = ['GenSimFull','DigiFullPU','RecoFullPU','HARVESTFullPU']
+upgradeProperties[2017]['2017NewFPixPU']['ScenToRun'] = ['GenSimFull','DigiFullPU','RecoFullPU','HARVESTFullPU']
+upgradeProperties[2017]['2017HCALdevPU']['ScenToRun'] = ['GenSimFull','DigiFullPU','RecoFullPU','HARVESTFullPU']
+upgradeProperties[2017]['2017AllNewPU']['ScenToRun'] = ['GenSimFull','DigiFullPU','RecoFullPU','HARVESTFullPU']
 
 upgradeProperties[2023] = {
     '2023D1' : {
