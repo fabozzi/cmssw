@@ -51,6 +51,9 @@ class MatrixInjector(object):
         self.keep = opt.keep
         self.memoryOffset = opt.memoryOffset
         self.memPerCore = opt.memPerCore
+        self.batchName = ''
+        if(opt.batchName):
+            self.batchName = '__'+opt.batchName
 
         #wagemt stuff
         if not self.wmagent:
@@ -419,8 +422,10 @@ class MatrixInjector(object):
             else:
                 chainDict['AcquisitionEra'] = chainDict['nowmTasklist'][0]['AcquisitionEra']
                 chainDict['ProcessingString'] = chainDict['nowmTasklist'][0]['ProcessingString']
-                
-            chainDict['Campaign'] = chainDict['AcquisitionEra']
+
+##### -> to allow batch name to be appended
+#            chainDict['Campaign'] = chainDict['AcquisitionEra']
+            chainDict['Campaign'] = chainDict['AcquisitionEra']+self.batchName
                
             ## clean things up now
             itask=0
