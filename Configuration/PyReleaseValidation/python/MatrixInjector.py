@@ -3,6 +3,7 @@ import json
 import os
 import copy
 import multiprocessing
+import time
 
 def performInjectionOptionTest(opt):
     if opt.show:
@@ -53,7 +54,7 @@ class MatrixInjector(object):
         self.memPerCore = opt.memPerCore
         self.batchName = ''
         if(opt.batchName):
-            self.batchName = '__'+opt.batchName
+            self.batchName = '__'+opt.batchName+'-'+str(int(time.time()))
 
         #wagemt stuff
         if not self.wmagent:
