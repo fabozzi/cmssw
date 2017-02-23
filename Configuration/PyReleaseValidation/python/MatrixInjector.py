@@ -53,8 +53,9 @@ class MatrixInjector(object):
         self.memoryOffset = opt.memoryOffset
         self.memPerCore = opt.memPerCore
         self.batchName = ''
+        self.batchTime = str(int(time.time()))
         if(opt.batchName):
-            self.batchName = '__'+opt.batchName+'-'+str(int(time.time()))
+            self.batchName = '__'+opt.batchName+'-'+self.batchTime
 
         #wagemt stuff
         if not self.wmagent:
@@ -113,7 +114,8 @@ class MatrixInjector(object):
             "Multicore" : 1,   # do not set multicore for the whole chain
             "Memory" : 3000,
             "SizePerEvent" : 1234,
-            "TimePerEvent" : 0.1
+            "TimePerEvent" : 0.1,
+            "PrepID": os.getenv('CMSSW_VERSION')
             }
 
         self.defaultHarvest={
@@ -375,6 +377,10 @@ class MatrixInjector(object):
                     if processStrPrefix or thisLabel:
                         chainDict['RequestString']+='_'+processStrPrefix+thisLabel
 
+### PrepID
+                    chainDict['PrepID'] = chainDict['CMSSWVersion']+'__'+self.batchTime+'-'+s[1].split('+')[0]
+                    if(self.batchName):
+                        chainDict['PrepID'] = chainDict['CMSSWVersion']+self.batchName+'-'+s[1].split('+')[0]
                         
                         
             #wrap up for this one
@@ -427,7 +433,7 @@ class MatrixInjector(object):
 ##### -> to allow batch name to be appended
 #            chainDict['Campaign'] = chainDict['AcquisitionEra']
             chainDict['Campaign'] = chainDict['AcquisitionEra']+self.batchName
-               
+
             ## clean things up now
             itask=0
             if self.keep:
