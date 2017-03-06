@@ -15,8 +15,10 @@ step1Defaults = {'--relval'      : None, # need to be explicitly set
 # step1 gensim: for postLS1
 step1Up2015Defaults = {'-s' : 'GEN,SIM',
                              '-n'            : 10,
-                             '--conditions'  : 'auto:run2_mc',
-                             '--beamspot'    : 'Realistic50ns13TeVCollision',
+#                             '--conditions'  : 'auto:run2_mc',
+                             '--conditions'  : '80X_mcRun2_asymptotic_2016_TrancheIV_v8_width1p9mum',
+                             '--beamspot'    : 'Realistic25ns13TeV2016Collision',
+                             '--customise_commands'    : '"process.VtxSmeared.Emittance = cms.double(1.876e-9)\\n process.VtxSmeared.SigmaZ = cms.double(3.201970)\\n process.VtxSmeared.X0 = cms.double(0.0856765)\\n process.VtxSmeared.Y0 = cms.double(0.1772797)\\n process.VtxSmeared.Z0 = cms.double(0.891892)\\n" ',
                              '--datatier'    : 'GEN-SIM',
                              '--eventcontent': 'FEVTDEBUG',
                              '--era'         : 'Run2_2016'
@@ -241,7 +243,7 @@ steps['QCD_Pt_80_120']=gen('QCD_Pt_80_120_8TeV_TuneCUETP8M1_cfi',Kby(9,100))
 steps['MinBias_13']=gen2015('MinBias_13TeV_pythia8_TuneCUETP8M1_cfi',Kby(100,300)) # set HS to provide adequate pool for PU
 steps['QCD_Pt_3000_3500_13']=gen2015('QCD_Pt_3000_3500_13TeV_TuneCUETP8M1_cfi',Kby(9,25))
 steps['QCD_Pt_600_800_13']=gen2015('QCD_Pt_600_800_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
-steps['QCD_Pt_80_120_13']=gen2015('QCD_Pt_80_120_13TeV_TuneCUETP8M1_cfi',Kby(9,100))
+steps['QCD_Pt_80_120_13']=gen2015('QCD_Pt_80_120_13TeV_TuneCUETP8M1_cfi',Kby(30,100))
 
 steps['QCD_Pt_30_80_BCtoE_8TeV']=gen('QCD_Pt_30_80_BCtoE_8TeV_TuneCUETP8M1_cfi',Kby(9000,100))
 steps['QCD_Pt_80_170_BCtoE_8TeV']=gen('QCD_Pt_80_170_BCtoE_8TeV_TuneCUETP8M1_cfi',Kby(9000,100))
@@ -265,7 +267,7 @@ steps['SingleMuPt1_UP15']=gen2015('SingleMuPt1_pythia8_cfi',Kby(25,1000))
 steps['SingleMuPt10_UP15']=gen2015('SingleMuPt10_pythia8_cfi',Kby(25,500))
 steps['SingleMuPt100_UP15']=gen2015('SingleMuPt100_pythia8_cfi',Kby(9,500))
 steps['SingleMuPt1000_UP15']=gen2015('SingleMuPt1000_pythia8_cfi',Kby(9,500))
-steps['NuGun_UP15']=gen2015('SingleNuE10_cfi.py',Kby(9,50))
+steps['NuGun_UP15']=gen2015('SingleNuE10_cfi.py',Kby(30,100))
 steps['TTbar']=gen('TTbar_8TeV_TuneCUETP8M1_cfi',Kby(9,100))
 steps['TTbarLepton']=gen('TTbarLepton_8TeV_TuneCUETP8M1_cfi',Kby(9,100))
 steps['ZEE']=gen('ZEE_8TeV_TuneCUETP8M1_cfi',Kby(9,100))
@@ -274,7 +276,7 @@ steps['Wjet_Pt_3000_3500']=gen('Wjet_Pt_3000_3500_8TeV_TuneCUETP8M1_cfi',Kby(9,5
 steps['LM1_sfts']=gen('LM1_sfts_8TeV_cfi',Kby(9,100))
 steps['QCD_FlatPt_15_3000']=gen('QCDForPF_8TeV_TuneCUETP8M1_cfi',Kby(5,100))
 steps['QCD_FlatPt_15_3000HS']=gen('QCDForPF_8TeV_TuneCUETP8M1_cfi',Kby(50,100))
-steps['TTbar_13']=gen2015('TTbar_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
+steps['TTbar_13']=gen2015('TTbar_13TeV_TuneCUETP8M1_cfi',Kby(30,100))
 steps['TTbarLepton_13']=gen2015('TTbarLepton_13TeV_TuneCUETP8M1_cfi',Kby(9,100))
 steps['ZEE_13']=gen2015('ZEE_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
 steps['ZEE_13_DBLMINIAOD']=gen2015('ZEE_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
@@ -313,7 +315,7 @@ baseDataSetRelease=[
     'CMSSW_6_2_0_pre8-PRE_ST62_V8_FastSim-v1',              # 2 for fastsim id test
 #    'CMSSW_7_1_0_pre5-START71_V1-v2',                      # 3 8 TeV , for the one sample which is part of the routine relval production (RelValZmumuJets_Pt_20_300, because of -v2)
                                                             # THIS ABOVE IS NOT USED, AT THE MOMENT
-    'CMSSW_7_6_0_pre7-76X_mcRun2_asymptotic_v9_realBS-v1',         # 3 - 13 TeV samples with GEN-SIM from 750_p4; also GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
+    'CMSSW_8_0_26-80X_mcRun2_asymptotic_2016_TrancheIV_v8_width1p9mum_BS1p9-v1',         # 3 - 13 TeV samples with GEN-SIM from 750_p4; also GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
     'CMSSW_7_3_0_pre1-PRE_LS172_V15_FastSim-v1',                   # 4 - fast sim GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
     'CMSSW_8_0_0-PU25ns_80X_mcRun2_asymptotic_v4-v1',      # 5 - fullSim PU 25ns premix for 800pre6
     'CMSSW_8_0_0-PU50ns_80X_mcRun2_startup_v4-v1',         # 6 - fullSim PU 50ns premix for 800pre6
@@ -853,7 +855,8 @@ steps['BsToMuMu_forSTEAM_13TeV_TuneCUETP8M1']=genvalid('BsToMuMu_forSTEAM_13TeV_
 PU={'-n':10,'--pileup':'default','--pileup_input':'das:/RelValMinBias/%s/GEN-SIM'%(baseDataSetRelease[0],)}
 # pu2 can be removed
 PU2={'-n':10,'--pileup':'default','--pileup_input':'das:/RelValMinBias/%s/GEN-SIM'%(baseDataSetRelease[0],)}
-PU25={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
+#PU25={'-n':10,'--pileup':'AVE_10_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
+PU25={'-n':10,'--pileup':'AVE_30_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
 PU50={'-n':10,'--pileup':'AVE_35_BX_50ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
 PUHI={'-n':10,'--pileup_input':'das:/RelValHydjetQ_MinBias_5020GeV/%s/GEN-SIM'%(baseDataSetRelease[9])}
 
@@ -895,7 +898,8 @@ step2Defaults = { '-s'            : 'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@fake',
                   }
 #for 2015
 step2Upg2015Defaults = {'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2016',
-                 '--conditions'  :'auto:run2_mc',
+#                 '--conditions'  :'auto:run2_mc',
+                 '--conditions'  :'80X_mcRun2_asymptotic_2016_TrancheIV_v8_width1p9mum',
                  '--datatier'    :'GEN-SIM-DIGI-RAW-HLTDEBUG',
                  '--eventcontent':'FEVTDEBUGHLT',
                  '--era'         :'Run2_2016',
@@ -1108,7 +1112,8 @@ step3Up2015Defaults = {
     #'-s':'RAW2DIGI,L1Reco,RECO,EI,VALIDATION,DQM',
     '-s':'RAW2DIGI,L1Reco,RECO,EI,PAT,VALIDATION:@standardValidation+@miniAODValidation,DQM:@standardDQM+@miniAODDQM',
     '--runUnscheduled':'',
-    '--conditions':'auto:run2_mc', 
+#    '--conditions':'auto:run2_mc', 
+    '--conditions':'80X_mcRun2_asymptotic_2016_TrancheIV_v8_width1p9mum',
     '-n':'10',
     '--datatier':'GEN-SIM-RECO,MINIAODSIM,DQMIO',
     '--eventcontent':'RECOSIM,MINIAODSIM,DQM',
@@ -1269,7 +1274,7 @@ step4Defaults = {
 step4Up2015Defaults = { 
                         '-s'            : 'ALCA:TkAlMuonIsolated+TkAlMinBias+MuAlOverlaps+EcalESAlign+EcalTrg',
                         '-n'            : 1000,
-                        '--conditions'  : 'auto:run2_mc',
+                        '--conditions'  : '80X_mcRun2_asymptotic_2016_TrancheIV_v8_width1p9mum',
                         '--era'         : 'Run2_2016',
                         '--datatier'    : 'ALCARECO',
                         '--eventcontent': 'ALCARECO',
@@ -1430,7 +1435,7 @@ steps['HARVESTHI2011']=merge([hiDefaults2011,{'-s':'HARVESTING:validationHarvest
 steps['HARVESTUP15']={
     # '-s':'HARVESTING:validationHarvesting+dqmHarvesting', # todo: remove UP from label
     '-s':'HARVESTING:@standardValidation+@standardDQM+@miniAODValidation+@miniAODDQM', # todo: remove UP from label
-    '--conditions':'auto:run2_mc', 
+    '--conditions':'80X_mcRun2_asymptotic_2016_TrancheIV_v8_width1p9mum', 
     '--mc':'',
     '--era' : 'Run2_2016',
     '--filetype':'DQM',
