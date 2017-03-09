@@ -1309,6 +1309,8 @@ steps['RECOUP15_PU50']=merge([PU50,step3Up2015Defaults50ns])
 # for PU25 High stats workflows
 steps['RECOUP15_PU25HS']=merge([PU25HS,step3Up2015Defaults])
 
+# for PU25 RECODEBUG format
+steps['RECOUP15_RD_PU25']=merge([{'--eventcontent':'RECODEBUG,MINIAODSIM,DQM','--datatier':'GEN-SIM-RECODEBUG,MINIAODSIM,DQMIO'},steps['RECOUP15_PU25']])
 
 # mask away - to be removed once we'll migrate the matrix to be fully unscheduled for RECO step
 #steps['RECOmAOD']=merge([step3DefaultsUnsch])
