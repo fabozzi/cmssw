@@ -118,6 +118,14 @@ class MatrixInjector(object):
             "DQMConfigCacheID" : None,
             "Multicore" : 1              # hardcode Multicore to be 1 for Harvest
             }
+
+        self.defaultMRHarvest={
+            "EnableHarvesting" : "True",
+            "DQMUploadUrl" : self.dqmgui,
+            "DQMConfigCacheID" : None,
+            "Multicore" : 1,             # hardcode Multicore to be 1 for Harvest
+            "DQMHarvestUnit" : "multiRun"
+            }
         
         self.defaultScratch={
             "TaskName" : None,                            #Task Name
@@ -239,6 +247,8 @@ class MatrixInjector(object):
                     index=0
                     splitForThisWf=None
                     thisLabel=self.speciallabel
+
+
                     #if 'HARVESTGEN' in s[3]:
                     if len( [step for step in s[3] if "HARVESTGEN" in step] )>0:
                         chainDict['TimePerEvent']=0.01
@@ -395,6 +405,9 @@ class MatrixInjector(object):
                                 if t_second['TaskName'].startswith('HARVEST'):
                                     chainDict.update(copy.deepcopy(self.defaultHarvest))
                                     chainDict['DQMConfigCacheID']=t_second['ConfigCacheID']
+                                if t_second['TaskName'].startswith('MRHARVEST'):
+                                    chainDict.update(copy.deepcopy(self.defaultMRHarvest))
+                                    chainDict['DQMConfigCacheID']=t_second['ConfigCacheID']
                                     ## the info are not in the task specific dict but in the general dict
                                     #t_input.update(copy.deepcopy(self.defaultHarvest))
                                     #t_input['DQMConfigCacheID']=t_second['ConfigCacheID']
@@ -430,6 +443,8 @@ class MatrixInjector(object):
                         chainDict['nowmTasklist'][i]['KeepOutput']=True
             for (i,t) in enumerate(chainDict['nowmTasklist']):
                 if t['TaskName'].startswith('HARVEST'):
+                    continue
+                if t['TaskName'].startswith('MRHARVEST'):
                     continue
                 if not self.keep:
                     t['KeepOutput']=True
