@@ -382,6 +382,8 @@ baseDataSetRelease=[
     'CMSSW_7_6_0-76X_mcRun2_asymptotic_v11-v1',                    # 10 - 13 TeV High Stats GEN-SIM
     'CMSSW_7_6_0_pre7-76X_mcRun2_asymptotic_v9_realBS-v1',         # 11 - 13 TeV High Stats MiniBias for mixing GEN-SIM
     'CMSSW_8_1_0_pre9_Geant4102-81X_mcRun2cosmics_startup_peak_v2-v1', # 12 - GEN-SIM input for 1307 cosmics wf from 810_p2
+    'CMSSW_9_0_0_pre4-90X_mcRun2_asymptotic_v1-v1',     # 13 - 13 TeV MinBias for PU for special LHE reHLT samples
+    'CMSSW_8_0_7-80X_mcRun2_asymptotic_v12-v1',             # 14 - GENSIM for LHE reHLT samples
     ]
 
 
@@ -906,6 +908,10 @@ steps['VBFHToBB_M125_Pow_py8_Evt_13']=lhegensim('Configuration/Generator/python/
 #steps['GluGluHToZZTo4L_M125_Pow_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValGluGluHToZZTo4L_M125_Pow_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 #steps['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToZZTo4Nu_M125_Pow_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
 #steps['VBFHToBB_M125_Pow_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToBB_M125_Pow_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
+steps['TTbar012Jets_NLO_Mad_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar012Jets_NLO_Mad_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
+steps['GluGluHToZZTo4L_M125_Pow_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValGluGluHToZZTo4L_M125_Pow_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[14],),location='STD')}
+steps['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToZZTo4Nu_M125_Pow_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[14],),location='STD')}
+steps['VBFHToBB_M125_Pow_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToBB_M125_Pow_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[14],),location='STD')}
 
 
 #Sherpa
@@ -927,7 +933,7 @@ steps['BsToMuMu_forSTEAM_13TeV_TuneCUETP8M1']=genvalid('BsToMuMu_forSTEAM_13TeV_
 PU={'-n':10,'--pileup':'default','--pileup_input':'das:/RelValMinBias/%s/GEN-SIM'%(baseDataSetRelease[0],)}
 # pu2 can be removed
 PU2={'-n':10,'--pileup':'default','--pileup_input':'das:/RelValMinBias/%s/GEN-SIM'%(baseDataSetRelease[0],)}
-PU25={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
+PU25={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[13],)}
 PU50={'-n':10,'--pileup':'AVE_35_BX_50ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[3],)}
 PUHI={'-n':10,'--pileup_input':'das:/RelValHydjetQ_MinBias_5020GeV/%s/GEN-SIM'%(baseDataSetRelease[9])}
 
@@ -978,6 +984,18 @@ step2Upg2015Defaults = {'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2016'
 step2Upg2015Defaults50ns = merge([{'-s':'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval50ns','--conditions':'auto:run2_mc_50ns','--era':'Run2_50ns'},step2Upg2015Defaults])
 
 steps['DIGIUP15']=merge([step2Upg2015Defaults])
+
+steps['DIGIUP15_reHLT']={'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2016',
+                 '--conditions'  :'auto:run2_mc',
+                 '--customise_commands':'"process.simHcalDigis.markAndPass = cms.bool(True)"',
+                 '--datatier'    :'GEN-SIM-DIGI-RAW-HLTDEBUG',
+                 '--eventcontent':'FEVTDEBUGHLT',
+                 '--era'         :'Run2_2016',
+                 '-n'            :'10'
+                  }
+
+steps['DIGIUP15_PU25_reHLT']=merge([PU25,steps['DIGIUP15_reHLT']])
+
 steps['DIGIUP15PROD1']=merge([{'-s':'DIGI,L1,DIGI2RAW,HLT:@relval2016','--eventcontent':'RAWSIM','--datatier':'GEN-SIM-RAW'},step2Upg2015Defaults])
 steps['DIGIUP15_PU25']=merge([PU25,step2Upg2015Defaults])
 steps['DIGIUP15_PU50']=merge([PU50,step2Upg2015Defaults50ns])
@@ -1227,6 +1245,52 @@ step3Up2015Defaults_trackingOnly = merge([step3_trackingOnly, remove(step3Up2015
 #step3DefaultsUnsch = merge([unSchOverrides,step3Defaults])
 
 steps['RECOUP15']=merge([step3Up2015Defaults]) # todo: remove UP from label
+
+
+steps['RECOUP15_reHLT'] = {
+    '-s':'RAW2DIGI,RECO,EI',
+    '--runUnscheduled':'',
+    '--conditions':'auto:run2_mc',
+    '-n':'10',
+    '--datatier':'GEN-SIM-DIGI-RAW',
+    '--eventcontent':'RAWAODSIM',
+    '--era' : 'Run2_2016'
+    }
+
+steps['RECOUP15_PU25_reHLT']=merge([PU25,steps['RECOUP15_reHLT']])
+
+steps['REHLTUP15_reHLT'] = {
+      '-s':'L1REPACK:FullMC,HLT:@relval2016,RAW2DIGI:L1TRawToDigi',
+      '--conditions':'auto:run2_mc',
+      '--process':'HLT2',
+      '--inputCommands' : '"keep *","drop *_TriggerResults_*_HLT","drop *_hltTriggerSummaryAOD_*_HLT","drop *_hltGtStage2ObjectMap_*_HLT","drop *_l1extraParticles_*_RECO","drop L1GlobalTriggerReadoutRecord_gtDigis_*_RECO","drop *_cscSegments_*_RECO","drop *_dt4DSegments_*_RECO","drop *_rpcRecHits_*_RECO"',
+      '--customise_commands':'"process.AODSIMoutput.outputCommands.append(\'drop L1GlobalTriggerReadoutRecord_gtDigis_*_HLT2\')"',
+      '--datatier':'AODSIM',
+      '--eventcontent':'AODSIM',
+      '--era' : 'Run2_2016',
+      '-n':'10',
+     }
+
+steps['MINIAODUP15_reHLT'] = {
+                 '--conditions':'auto:run2_mc',
+                 '-s':'PAT,DQM:@miniAODDQM,VALIDATION:@miniAODValidation',
+                 '--runUnscheduled':'',
+                 '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')"',
+                 '--datatier' : 'MINIAODSIM,DQMIO',
+                 '--eventcontent':'MINIAODSIM,DQM',
+                 '--era' : 'Run2_2016',
+                 '--mc' : '',
+                 '-n' : '10',
+                 }
+
+steps['HARVESTMINIAODUP15_reHLT']={
+    '-s':'HARVESTING:@miniAODValidation+@miniAODDQM',
+    '--conditions':'auto:run2_mc',
+    '--mc':'',
+    '--era' : 'Run2_2016',
+    '--filetype':'DQM',
+    }
+
 steps['RECOUP15AlCaCalo']=merge([step3Up2015DefaultsAlCaCalo]) # todo: remove UP from label
 
 steps['RECOUP15_trackingOnly']=merge([step3Up2015Defaults_trackingOnly]) # todo: remove UP from label

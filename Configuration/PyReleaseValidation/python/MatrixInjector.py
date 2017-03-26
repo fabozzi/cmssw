@@ -222,6 +222,11 @@ class MatrixInjector(object):
             wmsplit['RecoFull']=5
             wmsplit['DigiFullPU']=1
             wmsplit['RecoFullPU']=1
+            wmsplit['DIGIUP15_reHLT']=1
+            wmsplit['RECOUP15_reHLT']=1
+            wmsplit['REHLTUP15_reHLT']=1
+            wmsplit['MINIAODUP15_reHLT']=1
+            wmsplit['DIGIUP15_PU25_reHLT']=1
 
                                     
             #import pprint
