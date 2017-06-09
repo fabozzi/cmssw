@@ -121,7 +121,7 @@ upgradeProperties = {}
 upgradeProperties[2017] = {
     '2017' : {
         'Geom' : 'DB:Extended',
-        'GT' : 'auto:phase1_2017_realistic',
+        'GT' : '92X_upgrade2017_realistic_v1_withNewBSFromEarly2017Data',
         'HLTmenu': '@relval2017',
         'Era' : 'Run2_2017',
         'ScenToRun' : ['GenSimFull','DigiFull','RecoFull','ALCAFull','HARVESTFull'],
@@ -366,7 +366,7 @@ howMuches={'FourMuPt_1_200_pythia8_cfi':Kby(10,100),
            'DYToLL_M-50_14TeV_pythia8_cff':Kby(9,100),
            'DYToTauTau_M-50_14TeV_pythia8_tauola_cff':Kby(9,100),
            'TTbar_13TeV_TuneCUETP8M1_cfi':Kby(9,50),
-           'MinBias_13TeV_pythia8_TuneCUETP8M1_cfi':Kby(90,100),
+           'MinBias_13TeV_pythia8_TuneCUETP8M1_cfi':Kby(500,500),
            'ZEE_14TeV_TuneCUETP8M1_cfi':Kby(9,100),
            'QCD_Pt_80_120_13TeV_TuneCUETP8M1_cfi':Kby(9,100),
            'H125GGgluonfusion_13TeV_TuneCUETP8M1_cfi':Kby(9,50),
