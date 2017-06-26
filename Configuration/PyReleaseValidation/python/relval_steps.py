@@ -253,6 +253,9 @@ steps['RunSinglePh2016E']={'INPUT':InputInfo(dataSet='/SinglePhoton/Run2016E-v2/
 steps['RunZeroBias2016E']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2016E-v2/RAW',label='zb2016E',events=100000,location='STD', ls=Run2016E)}
 steps['RunMuOnia2016E']={'INPUT':InputInfo(dataSet='/MuOnia/Run2016E-v2/RAW',label='muOnia2016E',events=100000,location='STD', ls=Run2016E)}
 
+
+steps['RunJetHT2016E_reminiaod']={'INPUT':InputInfo(dataSet='/JetHT/Run2016E-18Apr2017-v1/AOD',label='rmaod_jetHT2016E',events=100000,location='STD', ls=Run2016E)}
+
 #### run2 2016H ####
 Run2016H={283877: [[1, 45]]}
 steps['RunHLTPhy2016H']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2016H-v1/RAW',label='hltPhy2016H',events=100000,location='STD', ls=Run2016H)}
@@ -520,7 +523,8 @@ steps['H125GGgluonfusion_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValH125GG
 steps['QQH1352T_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
 steps['NuGun_UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
 
-
+# INPUT command for reMiniAOD wf 
+steps['TTbar_13_reminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_8_0_21-80X_mcRun2_asymptotic_2016_TrancheIV_v6_Tr4GT_v6-v1/GEN-SIM-RECO',location='STD')}
 
 #input for fast sim workflows to be added - TODO
 
@@ -1686,6 +1690,10 @@ steps['HARVESTUP15']={
 
 steps['HARVESTMINUP15']=merge([{'-s':'HARVESTING:validationHarvesting+dqmHarvesting'},steps['HARVESTUP15']])
 
+steps['HARVESTDR2_REMINIAOD_mc2016']=merge([{'-s':'HARVESTING:@miniAODValidation+@miniAODDQM','--era':'Run2_2016,run2_miniAOD_80XLegacy'},steps['HARVESTUP15']])
+
+steps['HARVESTDR2_REMINIAOD_data2016']=merge([{'--data':'', '-s':'HARVESTING:@miniAODDQM','--era':'Run2_2016,run2_miniAOD_80XLegacy'},steps['HARVESTDR2']])
+
 steps['HARVESTUP15_PU25']=steps['HARVESTUP15']
 
 steps['HARVESTUP15_PU50']=merge([{'-s':'HARVESTING:@standardValidationNoHLT+@standardDQMFakeHLT+@miniAODValidation+@miniAODDQM','--era' : 'Run2_50ns'},steps['HARVESTUP15']])
@@ -1775,6 +1783,7 @@ stepMiniAODDataUP15 = merge([{'--conditions'   : 'auto:run1_data',
                           '--filein'       :'file:step3.root'
                           },stepMiniAODDefaults])
 
+
 # Not sure whether the customisations are in the dict as "--customise" or "--era" so try to
 # remove both. Currently premixing uses "--customise" and everything else uses "--era".
 try : stepMiniAODData = remove(stepMiniAODDataUP15,'--era')
@@ -1802,6 +1811,27 @@ steps['DBLMINIAODMCUP15NODQM'] = merge([{'--conditions':'auto:run2_mc',
                                    '-s':'PAT',
                                    '--datatier' : 'MINIAODSIM',
                                    '--eventcontent':'MINIAOD',},stepMiniAODMC])
+
+steps['REMINIAOD_data2016'] = merge([{'-s' : 'PAT,DQM:@miniAODDQM',
+                                      '--process' : 'PAT',
+                                      '--era' :  'Run2_2016,run2_miniAOD_80XLegacy',
+                                      '--conditions' : 'auto:run2_data_relval',
+                                      '--data' : '',
+                                      '--scenario' : 'pp',
+                                      '--eventcontent' : 'MINIAOD,DQM',
+                                      '--datatier' : 'MINIAOD,DQMIO'
+                          },stepMiniAODDefaults])
+
+steps['REMINIAOD_mc2016'] = merge([{'-s' : 'PAT,VALIDATION:@miniAODValidation,DQM:@miniAODDQM',
+                                      '--process' : 'PAT',
+                                      '--era' :  'Run2_2016,run2_miniAOD_80XLegacy',
+                                      '--conditions' : 'auto:run2_mc',
+                                      '--mc' : '',
+                                      '--scenario' : 'pp',
+                                      '--eventcontent' : 'MINIAODSIM,DQM',
+                                      '--datatier' : 'MINIAODSIM,DQMIO'
+                          },stepMiniAODDefaults])
+
 
 #################################################################################
 ####From this line till the end of the file :
