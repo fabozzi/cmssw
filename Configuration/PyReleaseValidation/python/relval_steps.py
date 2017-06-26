@@ -254,7 +254,7 @@ steps['RunZeroBias2016E']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2016E-v2/RAW'
 steps['RunMuOnia2016E']={'INPUT':InputInfo(dataSet='/MuOnia/Run2016E-v2/RAW',label='muOnia2016E',events=100000,location='STD', ls=Run2016E)}
 
 
-steps['RunJetHT2016E_reminiaod']={'INPUT':InputInfo(dataSet='/JetHT/Run2016E-18Apr2017-v1/AOD',label='rmaod_jetHT2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunJetHT2016E_reminiaod']={'INPUT':InputInfo(dataSet='/JetHT/Run2016E-18Apr2017-v1/AOD',label='reminiaod_jetHT2016E',events=100000,location='STD', ls=Run2016E)}
 
 #### run2 2016H ####
 Run2016H={283877: [[1, 45]]}
@@ -524,7 +524,7 @@ steps['QQH1352T_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/%s/
 steps['NuGun_UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
 
 # INPUT command for reMiniAOD wf 
-steps['TTbar_13_reminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_8_0_21-80X_mcRun2_asymptotic_2016_TrancheIV_v6_Tr4GT_v6-v1/GEN-SIM-RECO',location='STD')}
+steps['TTbar_13_reminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_8_0_21-80X_mcRun2_asymptotic_2016_TrancheIV_v6_Tr4GT_v6-v1/GEN-SIM-RECO',label='reminiaod',location='STD')}
 
 #input for fast sim workflows to be added - TODO
 
