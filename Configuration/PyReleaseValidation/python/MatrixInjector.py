@@ -223,8 +223,6 @@ class MatrixInjector(object):
             wmsplit['RECOUP17']=1
             wmsplit['DIGIUP17_PU25']=1
             wmsplit['RECOUP17_PU25']=1
-            wmsplit['DigiFull_2017']=1
-            wmsplit['RecoFull_2017']=1
             wmsplit['DigiFullPU_2017PU']=1
             wmsplit['RecoFullPU_2017PU']=1
 
