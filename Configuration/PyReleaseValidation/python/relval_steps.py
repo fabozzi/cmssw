@@ -1860,7 +1860,7 @@ steps['DBLMINIAODMCUP15NODQM'] = merge([{'--conditions':'auto:run2_mc',
 from  Configuration.PyReleaseValidation.upgradeWorkflowComponents import *
 
 defaultDataSets={}
-defaultDataSets['2017']='CMSSW_9_2_3-92X_upgrade2017_realistic_v1_earlyBS2017-v'
+defaultDataSets['2017']='CMSSW_9_2_8-92X_upgrade2017_realistic_v10-v'
 defaultDataSets['2017Design']='CMSSW_9_2_1-92X_upgrade2017_design_IdealBS_v1-v'
 #defaultDataSets['2018']='CMSSW_8_1_0_pre16-81X_upgrade2017_realistic_v22-v'
 #defaultDataSets['2018Design']='CMSSW_8_1_0_pre16-81X_upgrade2017_design_IdealBS_v6-v'
@@ -1877,7 +1877,26 @@ for key in keys:
   defaultDataSets[key+'PU']=defaultDataSets[key]
 
 # sometimes v1 won't be used - override it here - the dictionary key is gen fragment + '_' + geometry
-versionOverrides={}
+versionOverrides={
+    'MinBias_13TeV_pythia8_TuneCUETP8M1_2017':'2',
+    'MinBias_13TeV_pythia8_TuneCUETP8M1_2017PU':'2',
+    'ADDMonoJet_13TeV_d3MD3_TuneCUETP8M1_2017':'2',
+    'ADDMonoJet_13TeV_d3MD3_TuneCUETP8M1_2017PU':'2',
+    'BeamHalo_13TeV_2017':'2',
+    'BeamHalo_13TeV_2017PU':'2',
+    'H200ChargedTaus_Tauola_13TeV_2017':'2',
+    'H200ChargedTaus_Tauola_13TeV_2017PU':'2',
+    'SingleNuE10_cf_2017':'2',
+    'SingleNuE10_cf_2017PU':'2',
+    'QCD_Pt_3000_3500_13TeV_TuneCUETP8M1_2017':'2',
+    'QCD_Pt_3000_3500_13TeV_TuneCUETP8M1_2017PU':'2',
+    'TTbarLepton_13TeV_TuneCUETP8M1_2017':'2',
+    'TTbarLepton_13TeV_TuneCUETP8M1_2017PU':'2',
+    'WpM_13TeV_TuneCUETP8M1_2017':'2',
+    'WpM_13TeV_TuneCUETP8M1_2017PU':'2',
+    'ZpMM_13TeV_TuneCUETP8M1_2017':'2',
+    'ZpMM_13TeV_TuneCUETP8M1_2017PU':'2'
+}
 
 baseDataSetReleaseBetter={}
 for gen in upgradeFragments:
@@ -1890,12 +1909,14 @@ for gen in upgradeFragments:
 
 PUDataSets={}
 for ds in defaultDataSets:
-    key='MinBias_14TeV_pythia8_TuneCUETP8M1'+'_'+ds
+    key='MinBias_13TeV_pythia8_TuneCUETP8M1'+'_'+ds
     name=baseDataSetReleaseBetter[key]
+    key14='MinBias_14TeV_pythia8_TuneCUETP8M1'+'_'+ds
+    name14=baseDataSetReleaseBetter[key14]
     if '2017' in name or '2018' in name:
-    	PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
+        PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
     else:
-    	PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_14TeV/%s/GEN-SIM'%(name,)}
+        PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_14TeV/%s/GEN-SIM'%(name14,)}
 
     #PUDataSets[ds]={'-n':10,'--pileup':'AVE_50_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
     #PUDataSets[ds]={'-n':10,'--pileup':'AVE_70_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
