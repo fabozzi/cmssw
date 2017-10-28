@@ -261,6 +261,7 @@ class MatrixInjector(object):
                         thisLabel=thisLabel+"_dblMiniAOD"
                     processStrPrefix=''
                     setPrimaryDs=None
+                    nanomergeGT=''
                     for step in s[3]:
                         
                         if 'INPUT' in step or (not isinstance(s[2][index],str)):
@@ -342,6 +343,11 @@ class MatrixInjector(object):
                             chainDict['nowmTasklist'][-1]['ConfigCacheID']='%s/%s.py'%(dir,step)
                             chainDict['nowmTasklist'][-1]['GlobalTag']=chainDict['nowmTasklist'][-1]['nowmIO']['GT'] # copy to the proper parameter name
                             chainDict['GlobalTag']=chainDict['nowmTasklist'][-1]['nowmIO']['GT'] #set in general to the last one of the chain
+                            if 'NANOEDM' in step :
+                                nanomergeGT = chainDict['nowmTasklist'][-1]['nowmIO']['GT']
+                            if 'NANOMERGE' in step :
+                                chainDict['nowmTasklist'][-1]['GlobalTag'] = nanomergeGT
+                                chainDict['GlobalTag'] = nanomergeGT
                             if 'pileup' in chainDict['nowmTasklist'][-1]['nowmIO']:
                                 chainDict['nowmTasklist'][-1]['MCPileup']=chainDict['nowmTasklist'][-1]['nowmIO']['pileup']
                             if '--pileup ' in s[2][index]:      # catch --pileup (scenarion) and not --pileup_ (dataset to be mixed) => works also making PRE-MIXed dataset
