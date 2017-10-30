@@ -531,8 +531,18 @@ steps['ZEE_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValZEE_13/%s/GEN-SIM'%(
 steps['ZMM_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValZMM_13/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
 steps['ZTT_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValZTT_13/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
 steps['H125GGgluonfusion_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_13/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
-steps['QQH1352T_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
+#steps['QQH1352T_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
 steps['NuGun_UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun/%s/GEN-SIM'%(baseDataSetRelease[13],),location='STD')}
+
+steps['GluGluHToZZTo4L_M125_Pow_py8_Evt_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValGluGluHToZZTo4L_M125_Pow_py8_Evt_13UP17/CMSSW_9_2_8-92X_upgrade2017_realistic_v10_HS-v1/GEN-SIM',location='STD')}
+steps['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToZZTo4Nu_M125_Pow_py8_Evt_13UP17/CMSSW_9_2_8-92X_upgrade2017_realistic_v10_HS-v1/GEN-SIM',location='STD')}
+steps['VBFHToBB_M125_Pow_py8_Evt_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValVBFHToBB_M125_Pow_py8_Evt_13UP17/CMSSW_9_2_8-92X_upgrade2017_realistic_v10_HS-v1/GEN-SIM',location='STD')}
+
+
+steps['ZpEE_2250_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValZpEE_2250_13/CMSSW_9_2_8-92X_upgrade2017_realistic_v10_HS-v2/GEN-SIM',location='STD')}
+steps['ZpTT_1500_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_13/CMSSW_9_2_8-92X_upgrade2017_realistic_v10_HS-v2/GEN-SIM',location='STD')}
+steps['ZpMM_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValZpMM_13/CMSSW_9_2_8-92X_upgrade2017_realistic_v10_HS-v2/GEN-SIM',location='STD')}
+steps['QQH1352T_13UP17INPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/CMSSW_9_2_8-92X_upgrade2017_realistic_v10_HS-v2/GEN-SIM',location='STD')}
 
 
 
@@ -1042,7 +1052,7 @@ step2Upg2015Defaults = {'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2016'
 step2Upg2015Defaults50ns = merge([{'-s':'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval50ns','--conditions':'auto:run2_mc_50ns','--era':'Run2_50ns'},step2Upg2015Defaults])
 
 #for 2017
-step2Upg2017Defaults = {'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2017',
+step2Upg2017Defaults = {'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:2e34v40',
                  '--conditions'  :'auto:phase1_2017_realistic',
                  '--datatier'    :'GEN-SIM-DIGI-RAW-HLTDEBUG',
                  '--eventcontent':'FEVTDEBUGHLT',
