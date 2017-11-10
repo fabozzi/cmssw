@@ -1818,11 +1818,13 @@ steps['HARVESTHI2018']=merge([hiDefaults2018,{'-s':'HARVESTING:validationHarvest
                     '--mc':'',
                     '--era' : 'Run2_2017',
                     '--filetype':'DQM',
-                    '--scenario':'HeavyIons'}])
+                    '--scenario':'HeavyIons',
+                    '--dump_python':''}])
 steps['HARVESTHI2017']=merge([hiDefaults2017,{'-s':'HARVESTING:validationHarvesting+dqmHarvesting',
                     '--mc':'',
                     '--era' : 'Run2_2017_pp_on_XeXe',
-                    '--filetype':'DQM'}])
+                    '--filetype':'DQM',
+                    '--dump_python':''}])
 steps['HARVESTHI2015']=merge([hiDefaults2015,{'-s':'HARVESTING:validationHarvesting+dqmHarvesting',
                     '--mc':'',
                     '--era' : 'Run2_2016,Run2_HI',
@@ -1844,6 +1846,7 @@ steps['HARVESTUP15']={
     '--mc':'',
     '--era' : 'Run2_2016',
     '--filetype':'DQM',
+    '--dump_python':''
     }
 
 
@@ -2172,7 +2175,8 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                     '--geometry' : geom,
                                     '--scenario' : 'pp',
                                     '--filetype':'DQM',
-				    '--filein':'file:step3_inDQM.root'
+				    '--filein':'file:step3_inDQM.root',
+                                    '--dump_python':''
                                     }
 
     upgradeStepDict['HARVESTFullGlobal'][k] = merge([{'-s': 'HARVESTING:@phase2Validation+@phase2+@miniAODValidation+@miniAODDQM'}, upgradeStepDict['HARVESTFull'][k]])
