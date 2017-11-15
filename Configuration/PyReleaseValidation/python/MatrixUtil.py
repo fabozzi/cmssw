@@ -101,7 +101,7 @@ def selectedLS(list_runs=[],maxNum=-1,l_json=data_json2015):
 
 InputInfoNDefault=2000000    
 class InputInfo(object):
-    def __init__(self,dataSet,label='',run=[],ls={},files=1000,events=InputInfoNDefault,split=10,location='CAF',ib_blacklist=None,ib_block=None) :
+    def __init__(self,dataSet,dataSetParent='',label='',run=[],ls={},files=1000,events=InputInfoNDefault,split=10,location='CAF',ib_blacklist=None,ib_block=None) :
         self.run = run
         self.ls = ls
         self.files = files
@@ -112,28 +112,50 @@ class InputInfo(object):
         self.split = split
         self.ib_blacklist = ib_blacklist
         self.ib_block = ib_block
-        
-    def das(self, das_options):
+        self.dataSetParent = dataSetParent
+
+    def das(self, das_options, dataset):
         if len(self.run) is not 0 or self.ls:
-            queries = self.queries()[:3]
+            queries = self.queries(dataset)[:3]
             if len(self.run) != 0:
-              command = ";".join(["das_client %s --query '%s'" % (das_options, query) for query in queries])
+              command = ";".join(["dasgoclient %s --query '%s'" % (das_options, query) for query in queries])
             else:
               lumis = self.lumis()
               commands = []
               while queries:
-                commands.append("das_client %s --query 'lumi,%s' --format json | das-selected-lumis.py %s " % (das_options, queries.pop(), lumis.pop()))
+                commands.append("dasgoclient %s --query 'lumi,%s' --format json | das-selected-lumis.py %s " % (das_options, queries.pop(), lumis.pop()))
               command = ";".join(commands)
             command = "({0})".format(command)
         else:
-            command = "das_client %s --query '%s'" % (das_options, self.queries()[0])
-       
+            command = "dasgoclient %s --query '%s'" % (das_options, self.queries(dataset)[0])
         # Run filter on DAS output 
         if self.ib_blacklist:
             command += " | grep -E -v "
             command += " ".join(["-e '{0}'".format(pattern) for pattern in self.ib_blacklist])
         command += " | sort -u"
         return command
+
+#    def dasParent(self, das_options):
+#        if len(self.run) is not 0 or self.ls:
+#            queries = self.queries(self.dataSetParent)[:3]
+#            print queries
+#            if len(self.run) != 0:
+#              command = ";".join(["dasgoclient %s --query '%s'" % (das_options, query) for query in queries])
+#            else:
+#              lumis = self.lumis()
+#              commands = []
+#              while queries:
+#                commands.append("dasgoclient %s --query 'lumi,%s' --format json | das-selected-lumis.py %s " % (das_options, queries.pop(), lumis.pop()))
+#              command = ";".join(commands)
+#            command = "({0})".format(command)
+#        else:
+#            command = "dasgoclient %s --query '%s'" % (das_options, self.queries(self.dataSetParent)[0])
+#        # Run filter on DAS output
+#        if self.ib_blacklist:
+#            command += " | grep -E -v "
+#            command += " ".join(["-e '{0}'".format(pattern) for pattern in self.ib_blacklist])
+#        command += " | sort -u"
+#        return command
 
     def lumiRanges(self):
         if len(self.run) != 0:
@@ -151,9 +173,9 @@ class InputInfo(object):
           query_lumis.append(":".join(run_lumis))
       return query_lumis
 
-    def queries(self):
+    def queries(self, dataset):
         query_by = "block" if self.ib_block else "dataset"
-        query_source = "{0}#{1}".format(self.dataSet, self.ib_block) if self.ib_block else self.dataSet
+        query_source = "{0}#{1}".format(dataset, self.ib_block) if self.ib_block else dataset
 
         if self.ls :
             the_queries = []
@@ -181,11 +203,23 @@ class InputInfo(object):
             return ["file {0}={1} site=T2_CH_CERN".format(query_by, query_source)]
             #return ["file {0}={1} ".format(query_by, query_source)]
 
+#    def queriesParent(self):
+#        query_by = "block" if self.ib_block else "dataset"
+#        query_source = "{0}#{1}".format(self.dataSetParent, self.ib_block) if self.ib_block else self.dataSetParent
+#        if self.ls :
+#            the_queries = []
+#            return ["file {0}={1} run={2}".format(query_by, query_source, query_run) for query_run in self.ls.keys()]
+#            return the_queries
+#        if len(self.run) is not 0:
+#            return ["file {0}={1} run={2} site=T2_CH_CERN".format(query_by, query_source, query_run) for query_run in self.run]
+#        else:
+#            return ["file {0}={1} site=T2_CH_CERN".format(query_by, query_source)]
+
+
     def __str__(self):
         if self.ib_block:
             return "input from: {0} with run {1}#{2}".format(self.dataSet, self.ib_block, self.run)
         return "input from: {0} with run {1}".format(self.dataSet, self.run)
-
     
 # merge dictionaries, with prioty on the [0] index
 def merge(dictlist,TELL=False):
