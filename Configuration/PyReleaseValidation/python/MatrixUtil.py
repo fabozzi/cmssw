@@ -135,28 +135,6 @@ class InputInfo(object):
         command += " | sort -u"
         return command
 
-#    def dasParent(self, das_options):
-#        if len(self.run) is not 0 or self.ls:
-#            queries = self.queries(self.dataSetParent)[:3]
-#            print queries
-#            if len(self.run) != 0:
-#              command = ";".join(["dasgoclient %s --query '%s'" % (das_options, query) for query in queries])
-#            else:
-#              lumis = self.lumis()
-#              commands = []
-#              while queries:
-#                commands.append("dasgoclient %s --query 'lumi,%s' --format json | das-selected-lumis.py %s " % (das_options, queries.pop(), lumis.pop()))
-#              command = ";".join(commands)
-#            command = "({0})".format(command)
-#        else:
-#            command = "dasgoclient %s --query '%s'" % (das_options, self.queries(self.dataSetParent)[0])
-#        # Run filter on DAS output
-#        if self.ib_blacklist:
-#            command += " | grep -E -v "
-#            command += " ".join(["-e '{0}'".format(pattern) for pattern in self.ib_blacklist])
-#        command += " | sort -u"
-#        return command
-
     def lumiRanges(self):
         if len(self.run) != 0:
             return "echo '{\n"+",".join(('"%d":[[1,268435455]]\n'%(x,) for x in self.run))+"}'"
@@ -202,19 +180,6 @@ class InputInfo(object):
         else:
             return ["file {0}={1} site=T2_CH_CERN".format(query_by, query_source)]
             #return ["file {0}={1} ".format(query_by, query_source)]
-
-#    def queriesParent(self):
-#        query_by = "block" if self.ib_block else "dataset"
-#        query_source = "{0}#{1}".format(self.dataSetParent, self.ib_block) if self.ib_block else self.dataSetParent
-#        if self.ls :
-#            the_queries = []
-#            return ["file {0}={1} run={2}".format(query_by, query_source, query_run) for query_run in self.ls.keys()]
-#            return the_queries
-#        if len(self.run) is not 0:
-#            return ["file {0}={1} run={2} site=T2_CH_CERN".format(query_by, query_source, query_run) for query_run in self.run]
-#        else:
-#            return ["file {0}={1} site=T2_CH_CERN".format(query_by, query_source)]
-
 
     def __str__(self):
         if self.ib_block:
