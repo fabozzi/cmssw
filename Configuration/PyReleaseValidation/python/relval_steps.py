@@ -90,6 +90,7 @@ steps['HighMet2011B']={'INPUT':InputInfo(dataSet='/Jet/Run2011B-HighMET-19Nov201
 steps['RunHI2010']={'INPUT':InputInfo(dataSet='/HIAllPhysics/HIRun2010-v1/RAW',label='hi2010',run=[152698],events=10000,location='STD')}
 steps['RunHI2011']={'INPUT':InputInfo(dataSet='/HIMinBiasUPC/HIRun2011-v1/RAW',label='hi2011',run=[182124],events=10000,location='STD')}
 steps['RunPA2013']={'INPUT':InputInfo(dataSet='/PAMinBiasUPC/HIRun2013-v1/RAW',label='pa2013',run=[211313],events=10000,location='STD')}
+steps['RunXeXe2017']={'INPUT':InputInfo(dataSet='/HIMinimumBias1/XeXeRun2017-v1/RAW',label='xexe2017',events=10000,location='STD',ls={304899: [[33, 83]]})}
 
 Run2012A=[191226]
 Run2012ASk=Run2012A+[]
@@ -1423,6 +1424,9 @@ steps['RECOUP17_PU25']=steps['RECOUP17']
 
 # for Run1 PPb data workflow
 steps['RECO_PPbData']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,ALCA:TkAlMinBias+TkAlMuonIsolatedPA+TkAlUpsilonMuMuPA+TkAlZMuMuPA,SKIM:PAZMM+PAZEE+PAMinBias,EI,DQM','--scenario':'pp','--conditions':'auto:run1_data','--era':'Run1_pA','--datatier':'AOD,DQMIO','--eventcontent':'AOD,DQM'}, dataReco])
+
+# for 2017 XeXe data workflow
+steps['RECO_XeXeData']={'--runUnscheduled':'','-s':'RAW2DIGI,L1Reco,RECO','--conditions':'94X_dataRun2_Rereco17_ONLYXeXeBS_v1','--repacked':'','--era':'Run2_2017_pp_on_XeXe','--datatier':'AOD','--eventcontent':'AOD','--data':'','--process':'reRECO','--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2017_pp_on_XeXe'}
 
 # for Run2 PPb MC workflow
 steps['RECOUP15_PPb']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,ALCA:TkAlMinBias+TkAlMuonIsolatedPA+TkAlUpsilonMuMuPA+TkAlZMuMuPA,EI,VALIDATION,DQM','--conditions':'auto:run2_mc_pa','--era':'Run2_2016_pA','--datatier':'AODSIM,DQMIO','--eventcontent':'AODSIM,DQM'}, steps['RECOUP15']])
