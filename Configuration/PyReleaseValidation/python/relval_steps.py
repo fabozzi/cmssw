@@ -2033,11 +2033,13 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
 
     upgradeStepDict['RecoFull'][k] = {'-s':'RAW2DIGI,L1Reco,RECO,EI,PAT,VALIDATION:@standardValidation+@miniAODValidation,DQM:@standardDQM+@miniAODDQM',
                                       '--conditions':gt,
-                                      '--datatier':'GEN-SIM-RECO,MINIAODSIM,DQMIO',
+#                                      '--datatier':'GEN-SIM-RECO,MINIAODSIM,DQMIO',
+                                      '--datatier':'RAWRECOSIMHLT,MINIAODSIM,DQMIO',
                                       '-n':'10',
                                       '--runUnscheduled':'',
-                                      '--eventcontent':'RECOSIM,MINIAODSIM,DQM',
-                                      '--geometry' : geom
+                                      '--eventcontent':'RAWRECOSIMHLT,MINIAODSIM,DQM',
+                                      '--geometry' : geom,
+                                      '--dump_python':''
                                       }
 
     upgradeStepDict['RecoFullGlobal'][k] = {'-s':'RAW2DIGI,L1Reco,RECO,PAT,VALIDATION:@phase2Validation+@miniAODValidation,DQM:@phase2+@miniAODDQM',
