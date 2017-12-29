@@ -2096,7 +2096,7 @@ from  Configuration.PyReleaseValidation.upgradeWorkflowComponents import *
 defaultDataSets={}
 defaultDataSets['2017']='CMSSW_9_4_0_pre3-94X_mc2017_realistic_v4-v'
 defaultDataSets['2017Design']='CMSSW_9_4_0_pre3-94X_mc2017_design_IdealBS_v4-v'
-defaultDataSets['2018']='CMSSW_10_0_0_pre1-94X_upgrade2018_realistic_v5-v'
+defaultDataSets['2018']='CMSSW_10_0_0_pre2-100X_upgrade2018_realistic_v1-v'
 #defaultDataSets['2018Design']='CMSSW_8_1_0_pre16-81X_upgrade2017_design_IdealBS_v6-v'
 #defaultDataSets['2019']=''
 #defaultDataSets['2019Design']=''
@@ -2110,7 +2110,18 @@ for key in keys:
   defaultDataSets[key+'PU']=defaultDataSets[key]
 
 # sometimes v1 won't be used - override it here - the dictionary key is gen fragment + '_' + geometry
-versionOverrides={}
+versionOverrides={'BuMixing_BMuonFilter_forSTEAM_13TeV_TuneCUETP8M1_2017':'2',
+                  'SingleElectronPt10_pythia8_2017':'2',
+                  'HSCPstop_M_200_TuneCUETP8M1_13TeV_pythia8_2017':'2',
+                  'RSGravitonToGammaGamma_kMpl01_M_3000_TuneCUETP8M1_13TeV_pythia8_2017':'2',
+                  'WprimeToENu_M-2000_TuneCUETP8M1_13TeV-pythia8_2017':'2',
+                  'DisplacedSUSY_stopToBottom_M_300_1000mm_TuneCUETP8M1_13TeV_pythia8_2017':'2',
+                  'TenE_E_0_200_pythia8_2017':'2',
+                  'TenE_E_0_200_pythia8_2017PU':'2'
+}
+
+highStatVersions={'QCDForPF_13TeV_TuneCUETP8M1_2018PU':'CMSSW_10_0_0_pre3-100X_upgrade2018_realistic_forECAL_A_alpha_v1_HS1M_PF16-v1'}
+
 
 baseDataSetReleaseBetter={}
 for gen in upgradeFragments:
@@ -2120,13 +2131,17 @@ for gen in upgradeFragments:
         if key in versionOverrides:
             version = versionOverrides[key]
         baseDataSetReleaseBetter[key]=defaultDataSets[ds]+version
+        if key in highStatVersions:
+            baseDataSetReleaseBetter[key]=highStatVersions[key]
 
 PUDataSets={}
 for ds in defaultDataSets:
     key='MinBias_14TeV_pythia8_TuneCUETP8M1'+'_'+ds
     name=baseDataSetReleaseBetter[key]
-    if '2017' in name or '2018' in name:
-    	PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
+    if '2017' in name:
+        PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
+    elif '2018' in name:
+        PUDataSets[ds]={'-n':10,'--pileup':'AVE_50_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
     else:
     	PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_14TeV/%s/GEN-SIM'%(name,)}
 
@@ -2208,7 +2223,8 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '-n':'10',
                                       '--runUnscheduled':'',
                                       '--eventcontent':'RECOSIM,MINIAODSIM,DQM',
-                                      '--geometry' : geom
+                                      '--geometry' : geom,
+                                      '--dump_python':''
                                       }
 
     upgradeStepDict['RecoFullGlobal'][k] = {'-s':'RAW2DIGI,L1Reco,RECO,RECOSIM,PAT,VALIDATION:@phase2Validation+@miniAODValidation,DQM:@phase2+@miniAODDQM',
