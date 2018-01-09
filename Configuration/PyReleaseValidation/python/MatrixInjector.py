@@ -305,7 +305,8 @@ class MatrixInjector(object):
                                     return -15
                                 chainDict['nowmTasklist'][-1]['InputDataset']=nextHasDSInput.dataSet
                                 if ('DQMHLTonRAWAOD' in step) :
-                                    chainDict['IncludeParents']=True
+                                    chainDict['nowmTasklist'][-1]['IncludeParents']=True
+#                                    chainDict['IncludeParents']=True
                                 splitForThisWf=nextHasDSInput.split
                                 chainDict['nowmTasklist'][-1]['LumisPerJob']=splitForThisWf
                                 if step in wmsplit:
