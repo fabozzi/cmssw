@@ -2266,7 +2266,8 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '--datatier':'GEN-SIM-DIGI-RAW',
                                       '-n':'10',
                                       '--eventcontent':'FEVTDEBUGHLT',
-                                      '--geometry' : geom
+                                      '--geometry' : geom,
+                                      '--customise' : 'HLTrigger/Configuration/customizeHLTforCMSSW.customiseFor21664_forMahiOn'
                                       }
 
     # Adding Track trigger step in step2
@@ -2284,7 +2285,8 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '-n':'10',
                                       '--runUnscheduled':'',
                                       '--eventcontent':'RECOSIM,MINIAODSIM,DQM',
-                                      '--geometry' : geom
+                                      '--geometry' : geom,
+                                      '--procModifier' : 'run2_HECollapse_2018'
                                       }
 
     upgradeStepDict['RecoFullGlobal'][k] = {'-s':'RAW2DIGI,L1Reco,RECO,RECOSIM,PAT,VALIDATION:@phase2Validation+@miniAODValidation,DQM:@phase2+@miniAODDQM',
