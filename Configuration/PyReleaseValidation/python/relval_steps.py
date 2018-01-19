@@ -1300,6 +1300,7 @@ dataReco={ '--runUnscheduled':'',
           '--data':'',
           '--process':'reRECO',
           '--scenario':'pp',
+          '--customise_commands' :  '"process.hbheprereco.algorithm.useMahi = cms.bool(False)\\n process.hbheprereco.algorithm.useM2 = cms.bool(True)\\n"'
           }
 
 dataRecoAlCaCalo=merge([{'-s':'RAW2DIGI,L1Reco,RECO,EI,ALCA:SiStripCalZeroBias+SiStripCalMinBias+TkAlMinBias+EcalCalZElectron+EcalCalWElectron+EcalUncalZElectron+EcalUncalWElectron+EcalTrg+HcalCalIsoTrk,DQM'}, dataReco])
@@ -1647,12 +1648,13 @@ steps['RECOPRMXUP15_PU25']=merge([
 steps['RECOPRMXUP15_PU50']=merge([
         {'--era':'Run2_50ns','--customise':'SimGeneral/DataMixingModule/customiseForPremixingInput.customiseForPreMixingInput'},
         step3Up2015Defaults50ns])
+
 steps['RECOPRMXUP17_PU25']=merge([
         {'--conditions':'auto:phase1_2017_realistic','--era':'Run2_2017','--customise':'SimGeneral/DataMixingModule/customiseForPremixingInput.customiseForPreMixingInput'},
         step3Up2015Defaults])
 
 steps['RECOPRMXUP18_PU25']=merge([
-        {'--conditions':'auto:phase1_2018_realistic','--era':'Run2_2018','--customise':'SimGeneral/DataMixingModule/customiseForPremixingInput.customiseForPreMixingInput'},
+        {'--conditions':'auto:phase1_2018_realistic','--era':'Run2_2018','--customise':'SimGeneral/DataMixingModule/customiseForPremixingInput.customiseForPreMixingInput','--customise_commands' : '"process.hbheprereco.algorithm.useMahi = cms.bool(False)\\n process.hbheprereco.algorithm.useM2 = cms.bool(True)\\n"'},
         step3Up2015Defaults])
 
 recoPremixUp15prod = merge([
@@ -2284,7 +2286,8 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '-n':'10',
                                       '--runUnscheduled':'',
                                       '--eventcontent':'RECOSIM,MINIAODSIM,DQM',
-                                      '--geometry' : geom
+                                      '--geometry' : geom,
+                                      '--customise_commands' :  '"process.hbheprereco.algorithm.useMahi = cms.bool(False)\\n process.hbheprereco.algorithm.useM2 = cms.bool(True)\\n"'
                                       }
 
     upgradeStepDict['RecoFullGlobal'][k] = {'-s':'RAW2DIGI,L1Reco,RECO,RECOSIM,PAT,VALIDATION:@phase2Validation+@miniAODValidation,DQM:@phase2+@miniAODDQM',
