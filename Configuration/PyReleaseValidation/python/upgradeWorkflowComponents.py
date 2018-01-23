@@ -431,7 +431,7 @@ howMuches={'FourMuPt_1_200_pythia8_cfi':Kby(10,100),
            'SingleMuPt15Eta1p7_2p7_cfi':Kby(9,100),
            'SingleGammaPt25Eta1p7_2p7_cfi':Kby(9,100),
            'SingleElectronPt15Eta1p7_2p7_cfi':Kby(9,100),
-           'SingleElectronFlatPt1To100_pythia8_cfi':Kby(9,100),
+           'SingleElectronFlatPt1To100_pythia8_cfi':Kby(1000,500),
 }
 
 upgradeDatasetFromFragment={'FourMuPt_1_200_pythia8_cfi': 'FourMuPt1_200',
