@@ -235,6 +235,12 @@ class MatrixInjector(object):
             wmsplit['DIGICOS_UP17']=1
             wmsplit['RECOCOS_UP17']=1
 
+            wmsplit['DigiFull_2018']=1
+            wmsplit['RecoFull_2018']=1
+
+            wmsplit['DigiFullPU_2018PU']=1
+            wmsplit['RecoFullPU_2018PU']=1
+
                                     
             #import pprint
             #pprint.pprint(wmsplit)            
