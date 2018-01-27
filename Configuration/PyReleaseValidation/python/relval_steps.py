@@ -2185,6 +2185,8 @@ for key in keys:
 # sometimes v1 won't be used - override it here - the dictionary key is gen fragment + '_' + geometry
 versionOverrides={'BuMixing_BMuonFilter_forSTEAM_13TeV_TuneCUETP8M1_2017':'2','SingleElectronPt10_pythia8_2017':'2','HSCPstop_M_200_TuneCUETP8M1_13TeV_pythia8_2017':'2','RSGravitonToGammaGamma_kMpl01_M_3000_TuneCUETP8M1_13TeV_pythia8_2017':'2','WprimeToENu_M-2000_TuneCUETP8M1_13TeV-pythia8_2017':'2','DisplacedSUSY_stopToBottom_M_300_1000mm_TuneCUETP8M1_13TeV_pythia8_2017':'2','TenE_E_0_200_pythia8_2017':'2','TenE_E_0_200_pythia8_2017PU':'2'}
 
+highStatVersions={'ZEE_13TeV_TuneCUETP8M1_2018PU':'CMSSW_10_0_0-100X_upgrade2018_realistic_v7_HS-v1'}
+
 baseDataSetReleaseBetter={}
 for gen in upgradeFragments:
     for ds in defaultDataSets:
@@ -2193,6 +2195,8 @@ for gen in upgradeFragments:
         if key in versionOverrides:
             version = versionOverrides[key]
         baseDataSetReleaseBetter[key]=defaultDataSets[ds]+version
+        if key in highStatVersions:
+            baseDataSetReleaseBetter[key]=highStatVersions[key]
 
 PUDataSets={}
 for ds in defaultDataSets:
