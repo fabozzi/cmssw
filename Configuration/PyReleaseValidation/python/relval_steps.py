@@ -2186,7 +2186,9 @@ for key in keys:
 versionOverrides={'BuMixing_BMuonFilter_forSTEAM_13TeV_TuneCUETP8M1_2017':'2','SingleElectronPt10_pythia8_2017':'2','HSCPstop_M_200_TuneCUETP8M1_13TeV_pythia8_2017':'2','RSGravitonToGammaGamma_kMpl01_M_3000_TuneCUETP8M1_13TeV_pythia8_2017':'2','WprimeToENu_M-2000_TuneCUETP8M1_13TeV-pythia8_2017':'2','DisplacedSUSY_stopToBottom_M_300_1000mm_TuneCUETP8M1_13TeV_pythia8_2017':'2','TenE_E_0_200_pythia8_2017':'2','TenE_E_0_200_pythia8_2017PU':'2'}
 
 highStatVersions={'QCDForPF_13TeV_TuneCUETP8M1_2018':'CMSSW_10_0_0-100X_upgrade2018_realistic_v6_HS1M-v1',
-                  'QCDForPF_13TeV_TuneCUETP8M1_2018PU':'CMSSW_10_0_0-100X_upgrade2018_realistic_v6_HS1M-v1'
+                  'QCDForPF_13TeV_TuneCUETP8M1_2018PU':'CMSSW_10_0_0-100X_upgrade2018_realistic_v6_HS1M-v1',
+                  'ZTT_All_hadronic_13TeV_TuneCUETP8M1_2018PU':'CMSSW_10_0_0-100X_upgrade2018_realistic_v7_HS-v1',
+                  'SingleElectronFlatPt1To100_pythia8_2018':'CMSSW_10_0_0-100X_upgrade2018_realistic_v7_HS-v1',
                   }
 
 baseDataSetReleaseBetter={}
