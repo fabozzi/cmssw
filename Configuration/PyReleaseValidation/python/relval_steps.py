@@ -491,7 +491,7 @@ steps['TTbar_13_ID']=identitySim(steps['TTbar_13'])
 
 baseDataSetRelease=[
     'CMSSW_9_2_4-91X_mcRun1_realistic_v2-v1',               # 0 run1 samples; note TTbar GENSIM has v2 (see TTbarINPUT below)
-    'CMSSW_10_0_0_pre2-100X_mc2017_realistic_v1-v1',          # 1 GEN-SIM for HI RunII, 2018
+    'CMSSW_10_0_2-100X_upgrade2018_realistic_v10-v1',          # 1 GEN-SIM for HI RunII, 2018
     'CMSSW_6_2_0_pre8-PRE_ST62_V8_FastSim-v1',              # 2 for fastsim id test
 #    'CMSSW_7_1_0_pre5-START71_V1-v2',                      # 3 8 TeV , for the one sample which is part of the routine relval production (RelValZmumuJets_Pt_20_300, because of -v2)
                                                             # THIS ABOVE IS NOT USED, AT THE MOMENT
@@ -499,8 +499,8 @@ baseDataSetRelease=[
     'CMSSW_7_3_0_pre1-PRE_LS172_V15_FastSim-v1',                   # 4 - fast sim GEN-SIM-DIGI-RAW-HLTDEBUG for id tests
     'CMSSW_9_0_0_pre4-PU25ns_90X_mcRun2_asymptotic_v1-v1',    # 5 - fullSim PU 25ns UP15 premix
     'CMSSW_8_1_0_pre15-PU50ns_81X_mcRun2_startup_v12-v1',        # 6 - fullSim PU 50ns UP15 premix
-    'CMSSW_10_0_0_pre2-100X_mcRun2_asymptotic_v2_FastSim-v1',    # 7 - fastSim MinBias for mixing
-    'CMSSW_10_0_0_pre2-PU25ns_100X_mcRun2_asymptotic_v2_FastSim-v1',# 8 - fastSim premixed MinBias
+    'CMSSW_10_1_0_pre1-100X_mcRun2_asymptotic_v2_FastSim-v1',    # 7 - fastSim MinBias for mixing
+    'CMSSW_10_1_0_pre1-PU25ns_100X_mcRun2_asymptotic_v2_FastSim-v1',# 8 - fastSim premixed MinBias
     'CMSSW_10_0_0_pre2-100X_mc2017_realistic_v1-v1',        # 9 - Run2 HI GEN-SIM for mixing
     'CMSSW_7_6_0-76X_mcRun2_asymptotic_v11-v1',                    # 10 - 13 TeV High Stats GEN-SIM
     'CMSSW_7_6_0_pre7-76X_mcRun2_asymptotic_v9_realBS-v1',         # 11 - 13 TeV High Stats MiniBias for mixing GEN-SIM
@@ -508,7 +508,7 @@ baseDataSetRelease=[
     'CMSSW_10_0_0_pre2-100X_mc2017_realistic_v1-v1',     # 13 - 13 TeV samples with GEN-SIM from PhaseI upgrade
     'CMSSW_10_0_0_pre2-PU25ns_100X_mc2017_realistic_v1-v1',     # 14 - fullSim PU 25ns UP17 premix
     'CMSSW_10_0_0_pre3-PU25ns_100X_upgrade2018_realistic_v4-v1',  #15 - fullSim PU 25ns UP18 premix
-    'CMSSW_10_0_0_pre2-100X_upgrade2018_realistic_v1-v1',  #16 - GENSIM input 2018
+    'CMSSW_10_0_2-100X_upgrade2018_realistic_v10-v1',  #16 - GENSIM input 2018
     ]
 
 
@@ -2177,7 +2177,7 @@ from  Configuration.PyReleaseValidation.upgradeWorkflowComponents import *
 defaultDataSets={}
 defaultDataSets['2017']='CMSSW_10_0_0_pre2-100X_mc2017_realistic_v1-v'
 defaultDataSets['2017Design']='CMSSW_10_0_0_pre2-100X_mc2017_design_IdealBS_v1-v'
-defaultDataSets['2018']='CMSSW_10_0_0_pre2-100X_upgrade2018_realistic_v1-v'
+defaultDataSets['2018']='CMSSW_10_0_2-100X_upgrade2018_realistic_v10-v'
 #defaultDataSets['2018Design']='CMSSW_10_0_0_pre2-100X_upgrade2018_design_IdealBS_v1-v'
 #defaultDataSets['2019']=''
 #defaultDataSets['2019Design']=''
@@ -2274,7 +2274,8 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '--datatier':'GEN-SIM-DIGI-RAW',
                                       '-n':'10',
                                       '--eventcontent':'FEVTDEBUGHLT',
-                                      '--geometry' : geom
+                                      '--geometry' : geom,
+                                      '--customise' : 'HLTrigger/Configuration/customizeHLTforCMSSW.customiseForEcalTestPR22254thresholdA'
                                       }
 
     # Adding Track trigger step in step2
@@ -2292,7 +2293,8 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '-n':'10',
                                       '--runUnscheduled':'',
                                       '--eventcontent':'RECOSIM,MINIAODSIM,DQM',
-                                      '--geometry' : geom
+                                      '--geometry' : geom,
+                                      '--dump_python' : ''
                                       }
 
     upgradeStepDict['RecoFullGlobal'][k] = {'-s':'RAW2DIGI,L1Reco,RECO,RECOSIM,PAT,VALIDATION:@phase2Validation+@miniAODValidation,DQM:@phase2+@miniAODDQM',
