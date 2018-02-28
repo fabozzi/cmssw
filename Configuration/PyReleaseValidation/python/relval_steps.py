@@ -2275,7 +2275,7 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '-n':'10',
                                       '--eventcontent':'FEVTDEBUGHLT',
                                       '--geometry' : geom,
-                                      '--customise' : 'HLTrigger/Configuration/customizeHLTforCMSSW.customiseForEcalTestPR22254thresholdA'
+                                      '--customise' : 'HLTrigger/Configuration/customizeHLTforCMSSW.customiseForEcalTestPR22254thresholdB'
                                       }
 
     # Adding Track trigger step in step2
