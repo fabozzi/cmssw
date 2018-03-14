@@ -568,7 +568,7 @@ steps['RunZeroBias2017B_reminiaod']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_
 steps['RunDoubleEG2017C_reminiaod']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubEG2017C-v1/RECO',label='rmaod_doubEG2017C',events=100000,location='STD', ls=Run2017C)}
 steps['RunDoubleMuon2017C_reminiaod']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubMu2017C-v1/RECO',label='rmaod_doubMu2017C',events=100000,location='STD', ls=Run2017C)}
 steps['RunHLTPhysics2017C_reminiaod']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_hltPhy2017C-v1/RECO',label='rmaod_hltPhy2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunJetHT2017C_reminiaod']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_jetHT2017C-v1/RECO',label='rmaod_jetHT2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunJetHT2017C_reminiaod']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_resub_RelVal_jetHT2017C-v1/RECO',label='rmaod_jetHT2017C',events=100000,location='STD', ls=Run2017C)}
 steps['RunMET2017C_reminiaod']={'INPUT':InputInfo(dataSet='/MET/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_met2017C-v1/RECO',label='rmaod_met2017C',events=100000,location='STD', ls=Run2017C)}
 steps['RunMuOnia2017C_reminiaod']={'INPUT':InputInfo(dataSet='/MuOnia/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muOnia2017C-v1/RECO',label='rmaod_muOnia2017C',events=100000,location='STD', ls=Run2017C)}
 steps['RunMuonEG2017C_reminiaod']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muEG2017C-v1/RECO',label='rmaod_muEG2017C',events=100000,location='STD', ls=Run2017C)}
