@@ -484,99 +484,99 @@ steps['ProdZEE_13_reminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValProdZEE_13
 #steps['TTbar_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
 
 #################### 94x MC noPU ###########################
-steps['ADDMonoJet_d3MD3_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValADDMonoJet_d3MD3_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['BeamHalo_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValBeamHalo_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['BuMixing_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValBuMixing_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['DisplacedSUSY_stopToBottom_M_300_1000mm_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValDisplacedSUSY_stopToBottom_M_300_1000mm_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['EtaBToJpsiJpsi_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValEtaBToJpsiJpsi_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['H125GGgluonfusion_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['HSCPstop_M_200_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValHSCPstop_M_200_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['Higgs200ChargedTaus_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValHiggs200ChargedTaus_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['HydjetQ_MinBias_XeXe_5442GeV_2017_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValHydjetQ_MinBias_XeXe_5442GeV_2017/CMSSW_9_4_0-94X_mc2017_realistic_v10_resub-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['JpsiMuMu_Pt-8_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValJpsiMuMu_Pt-8/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['MinBias_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValMinBias_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['NuGun_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['PhiToMuMu_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValPhiToMuMu_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['PhotonJets_Pt_10_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValPhotonJets_Pt_10_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['QCD_FlatPt_15_3000HS_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_FlatPt_15_3000HS_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['QCD_Pt_3000_3500_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_3000_3500_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['QCD_Pt_600_800_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_600_800_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['QCD_Pt_80_120_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_80_120_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['QQH1352T_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['RSGravitonToGaGa_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValRSGravitonToGaGa_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['RSKKGluon_m3000GeV_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValRSKKGluon_m3000GeV_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SMS-T1tttt_mGl-1500_mLSP-100_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSMS-T1tttt_mGl-1500_mLSP-100_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleElectronPt10_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt10/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleElectronPt1000_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt1000/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleElectronPt35_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt35/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleGammaPt10_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleGammaPt10/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleGammaPt35_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleGammaPt35/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleMuPt1_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleMuPt10_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt10/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleMuPt100_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt100/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SingleMuPt1000_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1000/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TTbarLepton_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbarLepton_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TTbar_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TenE_0_200_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTenE_0_200/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TenTau_15_500_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTenTau_15_500/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['Upsilon1SToMuMu_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValUpsilon1SToMuMu_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['WE_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValWE_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['WM_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValWM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['Wjet_Pt_3000_3500_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValWjet_Pt_3000_3500_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['Wjet_Pt_80_120_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValWjet_Pt_80_120_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['WpM_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValWpM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['WpToENu_M-2000_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValWpToENu_M-2000_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZEE_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZEE_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZMM_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZMM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZTT_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZTT_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZpEE_2250_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZpEE_2250_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZpMM_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZpMM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZpMM_2250_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZpMM_2250_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZpTT_1500_13_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ADDMonoJet_d3MD3_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValADDMonoJet_d3MD3_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['BeamHalo_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValBeamHalo_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['BuMixing_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValBuMixing_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['DisplacedSUSY_stopToBottom_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValDisplacedSUSY_stopToBottom_M_300_1000mm_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['EtaBToJpsiJpsi_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValEtaBToJpsiJpsi_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['H125GGgluonfusion_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['HSCPstop_M_200_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValHSCPstop_M_200_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['Higgs200ChargedTaus_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValHiggs200ChargedTaus_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['HydjetQ_MinBias_XeXe_5442GeV_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValHydjetQ_MinBias_XeXe_5442GeV_2017/CMSSW_9_4_0-94X_mc2017_realistic_v10_resub-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['JpsiMuMu_Pt-8_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValJpsiMuMu_Pt-8/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['MinBias_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValMinBias_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['NuGun_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValNuGun/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['PhiToMuMu_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValPhiToMuMu_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['PhotonJets_Pt_10_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValPhotonJets_Pt_10_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['QCD_FlatPt_15_3000HS_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValQCD_FlatPt_15_3000HS_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['QCD_Pt_3000_3500_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_3000_3500_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['QCD_Pt_600_800_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_600_800_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['QCD_Pt_80_120_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt_80_120_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['QQH1352T_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['RSGravitonToGaGa_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValRSGravitonToGaGa_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['RSKKGluon_m3000GeV_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValRSKKGluon_m3000GeV_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SMS-T1tttt_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSMS-T1tttt_mGl-1500_mLSP-100_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleElectronPt10_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt10/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleElectronPt1000_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt1000/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleElectronPt35_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleElectronPt35/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleGammaPt10_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleGammaPt10/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleGammaPt35_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleGammaPt35/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleMuPt1_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleMuPt10_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt10/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleMuPt100_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt100/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SingleMuPt1000_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1000/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TTbarLepton_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTTbarLepton_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TTbar_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TenE_0_200_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTenE_0_200/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TenTau_15_500_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTenTau_15_500/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['Upsilon1SToMuMu_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValUpsilon1SToMuMu_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['WE_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValWE_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['WM_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValWM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['Wjet_Pt_3000_3500_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValWjet_Pt_3000_3500_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['Wjet_Pt_80_120_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValWjet_Pt_80_120_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['WpM_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValWpM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['WpToENu_M-2000_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValWpToENu_M-2000_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZEE_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZEE_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZMM_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZMM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZTT_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZTT_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZpEE_2250_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZpEE_2250_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZpMM_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZpMM_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZpMM_2250_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZpMM_2250_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZpTT_1500_13_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_13/CMSSW_9_4_0-94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
 
 #################### 94x MC PU ###########################
 
-steps['H125GGgluonfusion_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['Higgs200ChargedTaus_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValHiggs200ChargedTaus_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['NuGunPU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['QCD_FlatPt_15_3000HS_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValQCD_FlatPt_15_3000HS_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['QQH1352T_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['SMS-T1tttt_mGl-1500_mLSP-100_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValSMS-T1tttt_mGl-1500_mLSP-100_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TTbarLepton_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbarLepton_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TTbar_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TenE_0_200PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTenE_0_200/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['TenTau_15_500PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValTenTau_15_500/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZEE_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZEE_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZMM_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZMM_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZTT_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZTT_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
-steps['ZpTT_1500_13PU_94XreminiaodINPUT']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['H125GGgluonfusion_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['Higgs200ChargedTaus_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValHiggs200ChargedTaus_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['NuGunPU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValNuGun/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['QCD_FlatPt_15_3000HS_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValQCD_FlatPt_15_3000HS_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['QQH1352T_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['SMS-T1tttt_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValSMS-T1tttt_mGl-1500_mLSP-100_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TTbarLepton_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTTbarLepton_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TTbar_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTTbar_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TenE_0_200PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTenE_0_200/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['TenTau_15_500PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValTenTau_15_500/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZEE_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZEE_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZMM_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZMM_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZTT_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZTT_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
+steps['ZpTT_1500_13PU_94XrmIN']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_13/CMSSW_9_4_0-PU25ns_94X_mc2017_realistic_v10-v1/GEN-SIM-RECO',label='rmaod',location='STD')}
 
 #################### 94x MC data ###########################
 
-steps['RunDoubleEG2017B_reminiaod']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubEG2017B-v1/RECO',label='rmaod_doubEG2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunDoubleMuon2017B_reminiaod']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubMu2017B-v1/RECO',label='rmaod_doubMu2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunHLTPhysics2017B_reminiaod']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_hltPhy2017B-v1/RECO',label='rmaod_hltPhy2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunJetHT2017B_reminiaod']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_jetHT2017B-v1/RECO',label='rmaod_jetHT2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunMET2017B_reminiaod']={'INPUT':InputInfo(dataSet='/MET/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_met2017B-v1/RECO',label='rmaod_met2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunMuOnia2017B_reminiaod']={'INPUT':InputInfo(dataSet='/MuOnia/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muOnia2017B-v1/RECO',label='rmaod_muOnia2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunMuonEG2017B_reminiaod']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muEG2017B-v1/RECO',label='rmaod_muEG2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunSingleElectron2017B_reminiaod']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigEl2017B-v1/RECO',label='rmaod_sigEl2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunSingleMuon2017B_reminiaod']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigMu2017B-v1/RECO',label='rmaod_sigMu2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunSinglePhoton2017B_reminiaod']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigPh2017B-v1/RECO',label='rmaod_sigPh2017B',events=100000,location='STD', ls=Run2017B)}
-steps['RunZeroBias2017B_reminiaod']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_zb2017B-v1/RECO',label='rmaod_zb2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunDoubleEG2017B_rm']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubEG2017B-v1/RECO',label='rmaod_doubEG2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunDoubleMuon2017B_rm']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubMu2017B-v1/RECO',label='rmaod_doubMu2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunHLTPhysics2017B_rm']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_hltPhy2017B-v1/RECO',label='rmaod_hltPhy2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunJetHT2017B_rm']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_jetHT2017B-v1/RECO',label='rmaod_jetHT2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunMET2017B_rm']={'INPUT':InputInfo(dataSet='/MET/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_met2017B-v1/RECO',label='rmaod_met2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunMuOnia2017B_rm']={'INPUT':InputInfo(dataSet='/MuOnia/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muOnia2017B-v1/RECO',label='rmaod_muOnia2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunMuonEG2017B_rm']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muEG2017B-v1/RECO',label='rmaod_muEG2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunSingleElectron2017B_rm']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigEl2017B-v1/RECO',label='rmaod_sigEl2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunSingleMuon2017B_rm']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigMu2017B-v1/RECO',label='rmaod_sigMu2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunSinglePhoton2017B_rm']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigPh2017B-v1/RECO',label='rmaod_sigPh2017B',events=100000,location='STD', ls=Run2017B)}
+steps['RunZeroBias2017B_rm']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_zb2017B-v1/RECO',label='rmaod_zb2017B',events=100000,location='STD', ls=Run2017B)}
 
-steps['RunDoubleEG2017C_reminiaod']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubEG2017C-v1/RECO',label='rmaod_doubEG2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunDoubleMuon2017C_reminiaod']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubMu2017C-v1/RECO',label='rmaod_doubMu2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunHLTPhysics2017C_reminiaod']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_hltPhy2017C-v1/RECO',label='rmaod_hltPhy2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunJetHT2017C_reminiaod']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_resub_RelVal_jetHT2017C-v1/RECO',label='rmaod_jetHT2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunMET2017C_reminiaod']={'INPUT':InputInfo(dataSet='/MET/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_met2017C-v1/RECO',label='rmaod_met2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunMuOnia2017C_reminiaod']={'INPUT':InputInfo(dataSet='/MuOnia/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muOnia2017C-v1/RECO',label='rmaod_muOnia2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunMuonEG2017C_reminiaod']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muEG2017C-v1/RECO',label='rmaod_muEG2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunSingleElectron2017C_reminiaod']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigEl2017C-v1/RECO',label='rmaod_sigEl2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunSingleMuon2017C_reminiaod']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigMu2017C-v1/RECO',label='rmaod_sigMu2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunSinglePhoton2017C_reminiaod']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigPh2017C-v1/RECO',label='rmaod_sigPh2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunZeroBias2017C_reminiaod']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_zb2017C-v1/RECO',label='rmaod_zb2017C',events=100000,location='STD', ls=Run2017C)}
-steps['RunNoBPTX2017C_reminiaod']={'INPUT':InputInfo(dataSet='/NoBPTX/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_noBptx2017C-v1/RECO',label='rmaod_noBptx2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunDoubleEG2017C_rm']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubEG2017C-v1/RECO',label='rmaod_doubEG2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunDoubleMuon2017C_rm']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_doubMu2017C-v1/RECO',label='rmaod_doubMu2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunHLTPhysics2017C_rm']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_hltPhy2017C-v1/RECO',label='rmaod_hltPhy2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunJetHT2017C_rm']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_resub_RelVal_jetHT2017C-v1/RECO',label='rmaod_jetHT2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunMET2017C_rm']={'INPUT':InputInfo(dataSet='/MET/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_met2017C-v1/RECO',label='rmaod_met2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunMuOnia2017C_rm']={'INPUT':InputInfo(dataSet='/MuOnia/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muOnia2017C-v1/RECO',label='rmaod_muOnia2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunMuonEG2017C_rm']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_muEG2017C-v1/RECO',label='rmaod_muEG2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunSingleElectron2017C_rm']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigEl2017C-v1/RECO',label='rmaod_sigEl2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunSingleMuon2017C_rm']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigMu2017C-v1/RECO',label='rmaod_sigMu2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunSinglePhoton2017C_rm']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_sigPh2017C-v1/RECO',label='rmaod_sigPh2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunZeroBias2017C_rm']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_zb2017C-v1/RECO',label='rmaod_zb2017C',events=100000,location='STD', ls=Run2017C)}
+steps['RunNoBPTX2017C_rm']={'INPUT':InputInfo(dataSet='/NoBPTX/CMSSW_9_4_0-94X_dataRun2_PromptLike_v5_RelVal_noBptx2017C-v1/RECO',label='rmaod_noBptx2017C',events=100000,location='STD', ls=Run2017C)}
 
 
 
