@@ -104,6 +104,8 @@ workflows[102.32] = ['',['RunNoBPTX2017C_rm','REMINIAOD_data2017','HARVEST2017_R
 
 ############################
 
+###### reminiAOD 2016 #######
+
 # reminiaod wf on 80X MC noPU
 workflows[103.10] = ['', ['ADDMonoJet_d3MD3_13_80XrmIN','REMINIAOD_mc2016']]
 workflows[103.11] = ['', ['BeamHalo_13_80XrmIN','REMINIAOD_mc2016']]
