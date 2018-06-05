@@ -165,26 +165,26 @@ steps['ZpTT_1500_13PU_80XrmIN']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_13/
 
 #################### 80x data input ###########################
 
-steps['RunDoubleEG2016B_rm']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_doubEG2016B-v1/MINIAOD',label='rmaod_doubEG2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunDoubleMuon2016B_rm']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_doubMu2016B-v1/MINIAOD',label='rmaod_doubMu2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunHLTPhysics2016B_rm']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_hltPhy2016B-v1/MINIAOD',label='rmaod_hltPhy2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunJetHT2016B_rm']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_jetHT2016B-v1/MINIAOD',label='rmaod_jetHT2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunMET2016B_rm']={'INPUT':InputInfo(dataSet='/MET/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_met2016B-v1/MINIAOD',label='rmaod_met2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunMuOnia2016B_rm']={'INPUT':InputInfo(dataSet='/MuOnia/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_muOnia2016B-v1/MINIAOD',label='rmaod_muOnia2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunMuonEG2016B_rm']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_muEG2016B-v1/MINIAOD',label='rmaod_muEG2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunSingleElectron2016B_rm']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_sigEl2016B-v1/MINIAOD',label='rmaod_sigEl2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunSingleMuon2016B_rm']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_sigMu2016B-v1/MINIAOD',label='rmaod_sigMu2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunSinglePhoton2016B_rm']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_sigPh2016B-v1/MINIAOD',label='rmaod_sigPh2016B',events=100000,location='STD', ls=Run2016B)}
-steps['RunZeroBias2016B_rm']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_zb2016B-v1/MINIAOD',label='rmaod_zb2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunDoubleEG2016B_rm']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_doubEG2016B-v1/RECO',label='rmaod_doubEG2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunDoubleMuon2016B_rm']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_doubMu2016B-v1/RECO',label='rmaod_doubMu2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunHLTPhysics2016B_rm']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_hltPhy2016B-v1/RECO',label='rmaod_hltPhy2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunJetHT2016B_rm']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_jetHT2016B-v1/RECO',label='rmaod_jetHT2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunMET2016B_rm']={'INPUT':InputInfo(dataSet='/MET/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_met2016B-v1/RECO',label='rmaod_met2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunMuOnia2016B_rm']={'INPUT':InputInfo(dataSet='/MuOnia/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_muOnia2016B-v1/RECO',label='rmaod_muOnia2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunMuonEG2016B_rm']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_muEG2016B-v1/RECO',label='rmaod_muEG2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunSingleElectron2016B_rm']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_sigEl2016B-v1/RECO',label='rmaod_sigEl2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunSingleMuon2016B_rm']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_sigMu2016B-v1/RECO',label='rmaod_sigMu2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunSinglePhoton2016B_rm']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_sigPh2016B-v1/RECO',label='rmaod_sigPh2016B',events=100000,location='STD', ls=Run2016B)}
+steps['RunZeroBias2016B_rm']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_rsb_RelVal_zb2016B-v1/RECO',label='rmaod_zb2016B',events=100000,location='STD', ls=Run2016B)}
 
 
-steps['RunDoubleEG2016E_rm']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_doubEG2016E-v1/MINIAOD',label='rmaod_doubEG2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunDoubleMuon2016E_rm']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_doubMu2016E-v1/MINIAOD',label='rmaod_doubMu2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunHLTPhysics2016E_rm']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_hltPhy2016E-v1/MINIAOD',label='rmaod_hltPhy2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunJetHT2016E_rm']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_jetHT2016E-v1/MINIAOD',label='rmaod_jetHT2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunMET2016E_rm']={'INPUT':InputInfo(dataSet='/MET/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_met2016E-v1/MINIAOD',label='rmaod_met2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunMuonEG2016E_rm']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_muEG2016E-v1/MINIAOD',label='rmaod_muEG2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunSingleElectron2016E_rm']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_sigEl2016E-v1/MINIAOD',label='rmaod_sigEl2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunSingleMuon2016E_rm']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_sigMu2016E-v1/MINIAOD',label='rmaod_sigMu2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunSinglePhoton2016E_rm']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_sigPh2016E-v1/MINIAOD',label='rmaod_sigPh2016E',events=100000,location='STD', ls=Run2016E)}
-steps['RunZeroBias2016E_rm']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_zb2016E-v1/MINIAOD',label='rmaod_zb2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunDoubleEG2016E_rm']={'INPUT':InputInfo(dataSet='/DoubleEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_doubEG2016E-v1/RECO',label='rmaod_doubEG2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunDoubleMuon2016E_rm']={'INPUT':InputInfo(dataSet='/DoubleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_doubMu2016E-v1/RECO',label='rmaod_doubMu2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunHLTPhysics2016E_rm']={'INPUT':InputInfo(dataSet='/HLTPhysics/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_hltPhy2016E-v1/RECO',label='rmaod_hltPhy2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunJetHT2016E_rm']={'INPUT':InputInfo(dataSet='/JetHT/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_jetHT2016E-v1/RECO',label='rmaod_jetHT2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunMET2016E_rm']={'INPUT':InputInfo(dataSet='/MET/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_met2016E-v1/RECO',label='rmaod_met2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunMuonEG2016E_rm']={'INPUT':InputInfo(dataSet='/MuonEG/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_muEG2016E-v1/RECO',label='rmaod_muEG2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunSingleElectron2016E_rm']={'INPUT':InputInfo(dataSet='/SingleElectron/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_sigEl2016E-v1/RECO',label='rmaod_sigEl2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunSingleMuon2016E_rm']={'INPUT':InputInfo(dataSet='/SingleMuon/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_sigMu2016E-v1/RECO',label='rmaod_sigMu2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunSinglePhoton2016E_rm']={'INPUT':InputInfo(dataSet='/SinglePhoton/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_sigPh2016E-v1/RECO',label='rmaod_sigPh2016E',events=100000,location='STD', ls=Run2016E)}
+steps['RunZeroBias2016E_rm']={'INPUT':InputInfo(dataSet='/ZeroBias/CMSSW_8_0_31-80X_dataRun2_2016LegacyRepro_v4_RelVal_zb2016E-v1/RECO',label='rmaod_zb2016E',events=100000,location='STD', ls=Run2016E)}
