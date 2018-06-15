@@ -110,7 +110,7 @@ class MatrixInjector(object):
             "Multicore" : 1,   # do not set multicore for the whole chain
             "Memory" : 3000,
             "SizePerEvent" : 1234,
-            "TimePerEvent" : 0.1,
+            "TimePerEvent" : 10,
             "PrepID": os.getenv('CMSSW_VERSION')
             }
 
@@ -234,6 +234,12 @@ class MatrixInjector(object):
             wmsplit['RECOUP17_PU25']=1
             wmsplit['DIGICOS_UP17']=1
             wmsplit['RECOCOS_UP17']=1
+
+            wmsplit['DigiFull_2018']=1
+            wmsplit['RecoFull_2018']=1
+            wmsplit['DigiFullPU_2018PU']=1
+            wmsplit['RecoFullPU_2018PU']=1
+
 
                                     
             #import pprint
