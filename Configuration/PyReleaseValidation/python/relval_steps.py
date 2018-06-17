@@ -2690,7 +2690,7 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
 
     upgradeStepDict['miniAODFullreHLT'][k] = {'-s':'PAT',
                                       '--conditions':gt,
-                                      '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')"',
+                                      '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')\\n process.slimmedPatTrigger.triggerResults = cms.InputTag(\'TriggerResults::HLT2\')"',
                                       '--datatier':'MINIAODSIM',
                                       '-n':'10',
                                       '--runUnscheduled':'',
