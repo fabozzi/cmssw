@@ -540,3 +540,67 @@ workflows[280]= ['',['AMPT_PPb_5020GeV_MinimumBias','DIGI','RECO','HARVEST']]
 
 ### pPb Run2 ###
 workflows[281]= ['',['EPOS_PPb_8160GeV_MinimumBias','DIGIUP15_PPb','RECOUP15_PPb','HARVESTUP15_PPb']]
+
+
+
+### reHLT workflows
+workflows[8001361] = ['', ['GluGluHToZZTo4L_M125_Pow_py8_Evt_13UP18','DIGIUP18_reHLT','RECOUP18_reHLT','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001362] = ['', ['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13UP18','DIGIUP18_reHLT','RECOUP18_reHLT','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001363] = ['', ['VBFHToBB_M125_Pow_py8_Evt_13UP18','DIGIUP18_reHLT','RECOUP18_reHLT','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+
+# reHLT workflows of the LHE-based fullSim noPU above with RAW input
+workflows[8001361.1] = ['', ['GluGluHToZZTo4L_M125_Pow_py8_Evt_13UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001362.1] = ['', ['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001363.1] = ['', ['VBFHToBB_M125_Pow_py8_Evt_13UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+
+workflows[8001306.1]  = ['', ['SingleMuPt1_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001309.1]  = ['', ['Higgs200ChargedTaus_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001310.1] = ['', ['ADDMonoJet_d3MD3_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001311.1] = ['', ['MinBias_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001312.1] = ['', ['ZpMM_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001313.1] = ['', ['QCD_Pt_3000_3500_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001314.1] = ['', ['WpM_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001315.1] = ['', ['SingleElectronPt10_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001316.1] = ['', ['SingleElectronPt1000_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001317.1] = ['', ['SingleElectronPt35_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001318.1] = ['', ['SingleGammaPt10_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001319.1] = ['', ['SingleGammaPt35_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001320.1] = ['', ['SingleMuPt10_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001321.1] = ['', ['SingleMuPt100_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001322.1] = ['', ['SingleMuPt1000_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001323.1] = ['', ['NuGun_UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001324.1] = ['', ['TTbarLepton_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001325.1] = ['', ['TTbar_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001326.1] = ['', ['WE_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001327.1] = ['', ['WM_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001328.1] = ['', ['QCD_Pt_80_120_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001329.1] = ['', ['ZEE_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001330.1] = ['', ['ZMM_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001331.1] = ['', ['ZTT_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001332.1] = ['', ['H125GGgluonfusion_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001333.1] = ['', ['PhotonJets_Pt_10_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001334.1] = ['', ['QQH1352T_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001335.1] = ['', ['Wjet_Pt_80_120_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001336.1] = ['', ['Wjet_Pt_3000_3500_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001337.1] = ['', ['SMS-T1tttt_mGl-1500_mLSP-100_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001338.1] = ['', ['QCD_FlatPt_15_3000HS_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001339.1] = ['', ['QCD_Pt_600_800_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001340.1] = ['', ['PhiToMuMu_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001341.1] = ['', ['RSKKGluon_m3000GeV_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001343.1] = ['', ['ZpMM_2250_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001344.1] = ['', ['ZpEE_2250_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001345.1] = ['', ['ZpTT_1500_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001347.1] = ['', ['Upsilon1SToMuMu_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001348.1] = ['', ['EtaBToJpsiJpsi_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001351.1] = ['', ['BuMixing_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001352.1] = ['', ['HSCPstop_M_200_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001353.1] = ['', ['RSGravitonToGaGa_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001354.1] = ['', ['WpToENu_M-2000_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[8001355.1] = ['', ['DisplacedSUSY_stopToBottom_M_300_1000mm_13','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+
+
+workflows[80025211.1]=['',['GluGluHToZZTo4L_M125_Pow_py8_Evt_13UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[80025212.1]=['',['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+workflows[80025213.1]=['',['VBFHToBB_M125_Pow_py8_Evt_13UP18','REHLTUP18_reHLT','MINIAODUP18_reHLT']]
+
+

@@ -520,6 +520,16 @@ steps['ZTT_13UP18']=gen2018('ZTT_All_hadronic_13TeV_TuneCUETP8M1_cfi',Kby(9,80))
 steps['H125GGgluonfusion_13UP18']=gen2018('H125GGgluonfusion_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
 steps['QQH1352T_13UP18']=gen2018('QQH1352T_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
 steps['SMS-T1tttt_mGl-1500_mLSP-100_13UP18']=gen2018('SMS-T1tttt_mGl-1500_mLSP-100_13TeV-pythia8_cfi',Kby(9,50))
+steps['SingleElectronPt10_UP18']=gen2018('SingleElectronPt10_pythia8_cfi.py',Kby(9,50))
+steps['SingleElectronPt35_UP18']=gen2018('SingleElectronPt35_pythia8_cfi.py',Kby(9,50))
+steps['SingleElectronPt1000_UP18']=gen2018('SingleElectronPt1000_pythia8_cfi.py',Kby(9,50))
+steps['SingleGammaPt10_UP18']=gen2018('SingleGammaPt10_pythia8_cfi',Kby(9,50))
+steps['SingleGammaPt35_UP18']=gen2018('SingleGammaPt35_pythia8_cfi',Kby(9,50))
+steps['SingleMuPt1_UP18']=gen2018('SingleMuPt1_pythia8_cfi',Kby(9,50))
+steps['SingleMuPt10_UP18']=gen2018('SingleMuPt10_pythia8_cfi',Kby(9,50))
+steps['SingleMuPt100_UP18']=gen2018('SingleMuPt100_pythia8_cfi',Kby(9,50))
+steps['SingleMuPt1000_UP18']=gen2018('SingleMuPt1000_pythia8_cfi',Kby(9,50))
+
 
 
 # 13TeV High Stats samples
@@ -689,7 +699,6 @@ steps['H125GGgluonfusion_13UP18INPUT']={'INPUT':InputInfo(dataSet='/RelValH125GG
 steps['QQH1352T_13UP18INPUT']={'INPUT':InputInfo(dataSet='/RelValQQH1352T_13/%s/GEN-SIM'%(baseDataSetRelease[16],),location='STD')}
 steps['NuGun_UP18INPUT']={'INPUT':InputInfo(dataSet='/RelValNuGun/%s/GEN-SIM'%(baseDataSetRelease[16],),location='STD')}
 steps['SMS-T1tttt_mGl-1500_mLSP-100_13UP18INPUT']={'INPUT':InputInfo(dataSet='/RelValSMS-T1tttt_mGl-1500_mLSP-100_13/%s/GEN-SIM'%(baseDataSetRelease[16],),location='STD')}
-
 
 #input for fast sim workflows to be added - TODO
 
@@ -1112,9 +1121,15 @@ def lhegensim(fragment,howMuch):
 # LHE-GEN-SIM step for 2017
 step1LHEGenSimUp2017Default = merge ([{'--conditions':'auto:phase1_2017_realistic','--era':'Run2_2017','--beamspot':'Realistic25ns13TeVEarly2017Collision'},step1LHEGenSimDefault])
 
+# LHE-GEN-SIM step for 2017
+step1LHEGenSimUp2018Default = merge ([{'--conditions':'auto:phase1_2018_realistic','--era':'Run2_2018','--beamspot':'Realistic25ns13TeVEarly2017Collision'},step1LHEGenSimDefault])
+
 def lhegensim2017(fragment,howMuch):
     global step1LHEGenSimUp2017Default
     return merge([{'cfg':fragment},howMuch,step1LHEGenSimUp2017Default])
+def lhegensim2018(fragment,howMuch):
+    global step1LHEGenSimUp2018Default
+    return merge([{'cfg':fragment},howMuch,step1LHEGenSimUp2018Default])
 
 steps['TTbar012Jets_NLO_Mad_py8_Evt_13']=lhegensim('Configuration/Generator/python/TTbar012Jets_5f_NLO_FXFX_Madgraph_LHE_13TeV_cfi.py',Kby(9,50))
 steps['GluGluHToZZTo4L_M125_Pow_py8_Evt_13']=lhegensim('Configuration/Generator/python/GGHZZ4L_JHUGen_Pow_NNPDF30_LHE_13TeV_cfi.py', Kby(9,50))
@@ -1124,6 +1139,10 @@ steps['VBFHToBB_M125_Pow_py8_Evt_13']=lhegensim('Configuration/Generator/python/
 steps['GluGluHToZZTo4L_M125_Pow_py8_Evt_13UP17']=lhegensim2017('Configuration/Generator/python/GGHZZ4L_JHUGen_Pow_NNPDF30_LHE_13TeV_cfi.py', Kby(9,100))
 steps['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13UP17']=lhegensim2017('Configuration/Generator/python/VBFHZZ4Nu_Pow_NNPDF30_LHE_13TeV_cfi.py',Kby(9,100))
 steps['VBFHToBB_M125_Pow_py8_Evt_13UP17']=lhegensim2017('Configuration/Generator/python/VBFHbb_Pow_NNPDF30_LHE_13TeV_cfi.py',Kby(9,100))
+
+steps['GluGluHToZZTo4L_M125_Pow_py8_Evt_13UP18']=lhegensim2018('Configuration/Generator/python/GGHZZ4L_JHUGen_Pow_NNPDF30_LHE_13TeV_cfi.py', Kby(9,100))
+steps['VBFHToZZTo4Nu_M125_Pow_py8_Evt_13UP18']=lhegensim2018('Configuration/Generator/python/VBFHZZ4Nu_Pow_NNPDF30_LHE_13TeV_cfi.py',Kby(9,100))
+steps['VBFHToBB_M125_Pow_py8_Evt_13UP18']=lhegensim2018('Configuration/Generator/python/VBFHbb_Pow_NNPDF30_LHE_13TeV_cfi.py',Kby(9,100))
 
 #GEN-SIM inputs for LHE-GEN-SIM workflows
 #steps['TTbar012Jets_NLO_Mad_py8_Evt_13INPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar012Jets_NLO_Mad_py8_Evt_13/%s/GEN-SIM'%(baseDataSetRelease[3],),location='STD')}
@@ -1229,6 +1248,53 @@ steps['DIGIUP17']=merge([step2Upg2017Defaults])
 steps['DIGIUP17PROD1']=merge([{'-s':'DIGI,L1,DIGI2RAW,HLT:@relval2017','--eventcontent':'RAWSIM','--datatier':'GEN-SIM-RAW'},step2Upg2017Defaults])
 steps['DIGIUP17_PU25']=merge([PU25UP17,step2Upg2017Defaults])
 steps['DIGIUP18_PU25']=merge([PU25UP18,step2Upg2018Defaults])
+
+
+steps['DIGIUP18_reHLT']={'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2018',
+                         '--conditions'  :'auto:phase1_2018_realistic',
+                         '--customise_commands':'"process.simHcalDigis.markAndPass = cms.bool(True)"',
+                         '--datatier'    :'GEN-SIM-DIGI-RAW-HLTDEBUG',
+                         '--eventcontent':'FEVTDEBUGHLT',
+                         '--era'         :'Run2_2018',
+                         '-n'            :'10'
+                         }
+
+steps['DIGIUP18_PU25_reHLT']=merge([PU25,steps['DIGIUP18_reHLT']])
+
+steps['RECOUP18_reHLT'] = {
+    '-s':'RAW2DIGI,RECO,EI',
+    '--runUnscheduled':'',
+    '--conditions':'auto:phase1_2018_realistic',
+    '-n':'10',
+    '--datatier':'GEN-SIM-DIGI-RAW',
+    '--eventcontent':'RAWAODSIM',
+    '--era' : 'Run2_2018'
+    }
+
+
+steps['REHLTUP18_reHLT'] = {
+    '-s':'L1REPACK:FullMC,HLT:@relval2018,RAW2DIGI:L1TRawToDigi',
+    '--conditions':'auto:phase1_2018_realistic',
+    '--process':'HLT2',
+    '--inputCommands' : '"keep *","drop *_TriggerResults_*_HLT","drop *_hltTriggerSummaryAOD_*_HLT","drop *_hltGtStage2ObjectMap_*_HLT","drop *_l1extraParticles_*_RECO","drop L1GlobalTriggerReadoutRecord_gtDigis_*_RECO","drop *_cscSegments_*_RECO","drop *_dt4DSegments_*_RECO","drop *_rpcRecHits_*_RECO"',
+    '--customise_commands':'"process.AODSIMoutput.outputCommands.append(\'drop L1GlobalTriggerReadoutRecord_gtDigis_*_HLT2\')"',
+    '--datatier':'AODSIM',
+    '--eventcontent':'AODSIM',
+    '--era' : 'Run2_2018',
+    '-n':'10',
+    }
+
+steps['MINIAODUP18_reHLT'] = {
+    '--conditions':'auto:phase1_2018_realistic',
+    '-s':'PAT',
+    '--runUnscheduled':'',
+    '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')"',
+    '--datatier' : 'MINIAODSIM',
+    '--eventcontent':'MINIAODSIM',
+    '--era' : 'Run2_2018',
+    '--mc' : '',
+    '-n' : '10',
+    }
 
 # for Run2 PPb MC workflows
 steps['DIGIUP15_PPb']=merge([{'-s':'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:PIon','--conditions':'auto:run2_mc_pa', '--era':'Run2_2016_pA'}, steps['DIGIUP15']])
@@ -2448,8 +2514,9 @@ from  Configuration.PyReleaseValidation.upgradeWorkflowComponents import *
 defaultDataSets={}
 defaultDataSets['2017']='CMSSW_10_0_0_pre2-100X_mc2017_realistic_v1-v'
 defaultDataSets['2017Design']='CMSSW_10_0_0_pre2-100X_mc2017_design_IdealBS_v1-v'
-defaultDataSets['2018']='CMSSW_10_2_0_pre2-101X_upgrade2018_realistic_v7-v'
+defaultDataSets['2018']='CMSSW_10_2_0_pre5-102X_upgrade2018_realistic_v1-v'
 defaultDataSets['2018Design']='CMSSW_10_2_0_pre2-101X_upgrade2018_design_v8-v'
+defaultDataSets['2018reHLTRef']='CMSSW_10_2_0_pre5-102X_upgrade2018_realistic_v1-v'
 #defaultDataSets['2019']=''
 #defaultDataSets['2019Design']=''
 defaultDataSets['2023D17']='CMSSW_10_2_0_pre2-101X_upgrade2023_realistic_v5_2023D17noPU-v'
@@ -2556,6 +2623,27 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '--geometry' : geom
                                       }
 
+    upgradeStepDict['DigiFullreHLT'][k] = {'-s':'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:%s'%(hltversion),
+                                      '--conditions':gt,
+                                      '--datatier':'GEN-SIM-DIGI-RAW-HLTDEBUG',
+                                      '-n':'10',
+                                      '--eventcontent':'FEVTDEBUGHLT',
+                                      '--geometry' : geom,
+                                      '--customise_commands':'"process.simHcalDigis.markAndPass = cms.bool(True)"',
+                                      }
+
+    upgradeStepDict['ReHLTFull'][k] = {'-s':'L1REPACK:FullMC,HLT:%s,RAW2DIGI:L1TRawToDigi'%(hltversion),
+                                      '--conditions':gt,
+                                      '--process':'HLT2',
+                                      '--inputCommands' : '"keep *","drop *_TriggerResults_*_HLT","drop *_hltTriggerSummaryAOD_*_HLT","drop *_hltGtStage2ObjectMap_*_HLT","drop *_l1extraParticles_*_RECO","drop L1GlobalTriggerReadoutRecord_gtDigis_*_RECO","drop *_cscSegments_*_RECO","drop *_dt4DSegments_*_RECO","drop *_rpcRecHits_*_RECO"',
+                                      '--customise_commands':'"process.AODSIMoutput.outputCommands.append(\'drop L1GlobalTriggerReadoutRecord_gtDigis_*_HLT2\')"',
+                                      '--datatier':'AODSIM',
+                                      '-n':'10',
+                                      '--eventcontent':'AODSIM',
+                                      '--geometry' : geom
+                                      }
+
+
     # Adding Track trigger step in step2
     upgradeStepDict['DigiFullTrigger'][k] = {'-s':'DIGI:pdigi_valid,L1,L1TrackTrigger,DIGI2RAW,HLT:%s'%(hltversion),
                                       '--conditions':gt,
@@ -2571,6 +2659,15 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '-n':'10',
                                       '--runUnscheduled':'',
                                       '--eventcontent':'RECOSIM,MINIAODSIM,DQM',
+                                      '--geometry' : geom
+                                      }
+
+    upgradeStepDict['RecoFullreHLT'][k] = {'-s':'RAW2DIGI,RECO,EI',
+                                      '--conditions':gt,
+                                      '--datatier':'GEN-SIM-DIGI-RAW',
+                                      '-n':'10',
+                                      '--runUnscheduled':'',
+                                      '--eventcontent':'RAWAODSIM',
                                       '--geometry' : geom
                                       }
 
@@ -2590,6 +2687,17 @@ for year,k in [(year,k) for year in upgradeKeys for k in upgradeKeys[year]]:
                                       '--eventcontent':'FEVTDEBUGHLT',
                                       '--geometry' : geom
                                       }
+
+    upgradeStepDict['miniAODFullreHLT'][k] = {'-s':'PAT',
+                                      '--conditions':gt,
+                                      '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')"',
+                                      '--datatier':'MINIAODSIM',
+                                      '-n':'10',
+                                      '--runUnscheduled':'',
+                                      '--eventcontent':'MINIAODSIM',
+                                      '--geometry' : geom
+                                      }
+
 
     upgradeStepDict['HARVESTFull'][k]={'-s':'HARVESTING:@standardValidation+@standardDQM+@ExtraHLT+@miniAODValidation+@miniAODDQM',
                                     '--conditions':gt,
