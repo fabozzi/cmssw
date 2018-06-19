@@ -1259,7 +1259,7 @@ steps['DIGIUP18_reHLT']={'-s'     :'DIGI:pdigi_valid,L1,DIGI2RAW,HLT:@relval2018
                          '-n'            :'10'
                          }
 
-steps['DIGIUP18_PU25_reHLT']=merge([PU25,steps['DIGIUP18_reHLT']])
+steps['DIGIUP18_PU25_reHLT']=merge([PU25UP18,steps['DIGIUP18_reHLT']])
 
 steps['RECOUP18_reHLT'] = {
     '-s':'RAW2DIGI,RECO,EI',
@@ -1288,7 +1288,7 @@ steps['MINIAODUP18_reHLT'] = {
     '--conditions':'auto:phase1_2018_realistic',
     '-s':'PAT',
     '--runUnscheduled':'',
-    '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')"',
+    '--customise_commands':'"process.patTrigger.processName = cms.string(\'HLT2\')\\n process.slimmedPatTrigger.triggerResults = cms.InputTag(\'TriggerResults::HLT2\')"',
     '--datatier' : 'MINIAODSIM',
     '--eventcontent':'MINIAODSIM',
     '--era' : 'Run2_2018',
