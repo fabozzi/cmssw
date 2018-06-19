@@ -520,16 +520,6 @@ steps['ZTT_13UP18']=gen2018('ZTT_All_hadronic_13TeV_TuneCUETP8M1_cfi',Kby(9,80))
 steps['H125GGgluonfusion_13UP18']=gen2018('H125GGgluonfusion_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
 steps['QQH1352T_13UP18']=gen2018('QQH1352T_13TeV_TuneCUETP8M1_cfi',Kby(9,50))
 steps['SMS-T1tttt_mGl-1500_mLSP-100_13UP18']=gen2018('SMS-T1tttt_mGl-1500_mLSP-100_13TeV-pythia8_cfi',Kby(9,50))
-steps['SingleElectronPt10_UP18']=gen2018('SingleElectronPt10_pythia8_cfi.py',Kby(9,50))
-steps['SingleElectronPt35_UP18']=gen2018('SingleElectronPt35_pythia8_cfi.py',Kby(9,50))
-steps['SingleElectronPt1000_UP18']=gen2018('SingleElectronPt1000_pythia8_cfi.py',Kby(9,50))
-steps['SingleGammaPt10_UP18']=gen2018('SingleGammaPt10_pythia8_cfi',Kby(9,50))
-steps['SingleGammaPt35_UP18']=gen2018('SingleGammaPt35_pythia8_cfi',Kby(9,50))
-steps['SingleMuPt1_UP18']=gen2018('SingleMuPt1_pythia8_cfi',Kby(9,50))
-steps['SingleMuPt10_UP18']=gen2018('SingleMuPt10_pythia8_cfi',Kby(9,50))
-steps['SingleMuPt100_UP18']=gen2018('SingleMuPt100_pythia8_cfi',Kby(9,50))
-steps['SingleMuPt1000_UP18']=gen2018('SingleMuPt1000_pythia8_cfi',Kby(9,50))
-
 
 
 # 13TeV High Stats samples
