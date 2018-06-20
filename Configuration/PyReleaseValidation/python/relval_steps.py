@@ -2374,6 +2374,10 @@ for key in keys:
 # sometimes v1 won't be used - override it here - the dictionary key is gen fragment + '_' + geometry
 versionOverrides={'BuMixing_BMuonFilter_forSTEAM_13TeV_TuneCUETP8M1_2017':'2','SingleElectronPt10_pythia8_2017':'2','HSCPstop_M_200_TuneCUETP8M1_13TeV_pythia8_2017':'2','RSGravitonToGammaGamma_kMpl01_M_3000_TuneCUETP8M1_13TeV_pythia8_2017':'2','WprimeToENu_M-2000_TuneCUETP8M1_13TeV-pythia8_2017':'2','DisplacedSUSY_stopToBottom_M_300_1000mm_TuneCUETP8M1_13TeV_pythia8_2017':'2','TenE_E_0_200_pythia8_2017':'2','TenE_E_0_200_pythia8_2017PU':'2'}
 
+highStatVersions={'QCDForPF_13TeV_TuneCUETP8M1_2018':'CMSSW_10_1_7-101X_upgrade2018_realistic_forTracking315252_315420_v1_HS1M-v1',
+ 'QCDForPF_13TeV_TuneCUETP8M1_2018PU':'CMSSW_10_1_7-101X_upgrade2018_realistic_forTracking315252_315420_v1_HS1M-v1',
+                  }
+
 baseDataSetReleaseBetter={}
 for gen in upgradeFragments:
     for ds in defaultDataSets:
@@ -2382,6 +2386,8 @@ for gen in upgradeFragments:
         if key in versionOverrides:
             version = versionOverrides[key]
         baseDataSetReleaseBetter[key]=defaultDataSets[ds]+version
+        if key in highStatVersions:
+            baseDataSetReleaseBetter[key]=highStatVersions[key]
 
 PUDataSets={}
 for ds in defaultDataSets:
@@ -2391,7 +2397,7 @@ for ds in defaultDataSets:
     if '2017' in name:
     	PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
     elif '2018' in name:
-    	PUDataSets[ds]={'-n':10,'--pileup':'AVE_50_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
+        PUDataSets[ds]={'-n':10,'--pileup':'AVE_50_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(name,)}
     else:
         PUDataSets[ds]={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_14TeV/%s/GEN-SIM'%(name,)}
 
